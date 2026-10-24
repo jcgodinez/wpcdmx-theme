@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Hero Section
- * Slug: wpgranada26/hero-section
- * Categories: wpgranada
+ * Slug: wpcdmx-theme/hero-section
+ * Categories: wpcdmx
  * Description: Hero principal con imagen de fondo, badge, título, subtítulo y CTAs.
  * Keywords: hero, portada, comunidad
  */

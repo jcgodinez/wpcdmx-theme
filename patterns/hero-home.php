@@ -1,13 +1,13 @@
 <?php
 /**
  * Title: Hero Home
- * Slug: wpgranada26/hero-home
- * Categories: wpgranada
+ * Slug: wpcdmx-theme/hero-home
+ * Categories: wpcdmx
  * Description: Hero principal con dos columnas: mensaje de comunidad y próximo evento dinámico.
  * Keywords: hero, portada, comunidad, evento
  */
 ?>
-<!-- wp:group {"metadata":{"categories":["wpgranada"],"patternName":"wpgranada26/hero-home","name":"Hero Home"},"align":"full","className":"hero-home-section","backgroundColor":"base"} -->
+<!-- wp:group {"metadata":{"categories":["wpcdmx"],"patternName":"wpcdmx-theme/hero-home","name":"Hero Home"},"align":"full","className":"hero-home-section","backgroundColor":"base"} -->
 <div class="wp-block-group alignfull hero-home-section has-base-background-color has-background"><!-- wp:columns {"verticalAlignment":"top","isStackedOnMobile":false,"className":"alignwide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|80"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-top is-not-stacked-on-mobile alignwide"><!-- wp:column {"verticalAlignment":"top","className":"hero-home-col-text"} -->
 <div class="wp-block-column is-vertically-aligned-top hero-home-col-text"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"default"}} -->

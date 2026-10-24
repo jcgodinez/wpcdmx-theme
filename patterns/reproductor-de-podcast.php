@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Reproductor de podcast
- * Slug: wpgranada26/reproductor-de-podcast
+ * Slug: wpcdmx-theme/reproductor-de-podcast
  * Categories: 
  */
 ?>

@@ -1,13 +1,13 @@
 <?php
 /**
  * Title: Sobre nosotros
- * Slug: wpgranada26/about-comunidad
- * Categories: wpgranada
+ * Slug: wpcdmx-theme/about-comunidad
+ * Categories: wpcdmx
  * Description: Sección sobre la comunidad con texto a la izquierda e imagen a la derecha.
  * Keywords: sobre nosotros, comunidad, quiénes somos
  */
 ?>
-<!-- wp:columns {"verticalAlignment":"center","metadata":{"categories":["wpgranada"],"patternName":"wpgranada26/about-comunidad","name":"Sobre nosotros"},"className":"alignwide about-section","style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem","left":"var:preset|spacing|60","right":"var:preset|spacing|60"},"blockGap":{"left":"4rem"}}}} -->
+<!-- wp:columns {"verticalAlignment":"center","metadata":{"categories":["wpcdmx"],"patternName":"wpcdmx-theme/about-comunidad","name":"Sobre nosotros"},"className":"alignwide about-section","style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem","left":"var:preset|spacing|60","right":"var:preset|spacing|60"},"blockGap":{"left":"4rem"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center alignwide about-section" style="padding-top:4rem;padding-bottom:4rem;padding-left:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60)"><!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":1,"className":"about-h1","style":{"typography":{"fontWeight":"800","textAlign":"left"}},"textColor":"primary","fontFamily":"heading"} -->

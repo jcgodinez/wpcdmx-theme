@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Eventos Anteriores
- * Slug: wpgranada26/past-events
- * Categories: wpgranada
+ * Slug: wpcdmx-theme/past-events
+ * Categories: wpcdmx
  * Description: Grid de tres tarjetas con eventos pasados de la comunidad.
  * Keywords: eventos, meetup, anteriores, grid
  */
@@ -29,7 +29,7 @@
 			<!-- wp:group {"style":{"spacing":{"blockGap":"0"},"border":{"radius":"12px","color":"#c7d1ff","width":"1px"}},"backgroundColor":"base","layout":{"type":"default"},"className":"past-event-card"} -->
 			<div class="wp-block-group past-event-card has-border-color has-base-background-color has-background">
 				<!-- wp:image {"sizeSlug":"large","className":"past-event-card-image"} -->
-				<figure class="wp-block-image size-large past-event-card-image"><img src="" alt="<?php esc_attr_e( 'SEO para WooCommerce', 'wpgranada26' ); ?>" /></figure>
+				<figure class="wp-block-image size-large past-event-card-image"><img src="" alt="<?php esc_attr_e( 'SEO para WooCommerce', 'wpcdmx-theme' ); ?>" /></figure>
 				<!-- /wp:image -->
 				<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
 				<div class="wp-block-group">
@@ -54,7 +54,7 @@
 			<!-- wp:group {"style":{"spacing":{"blockGap":"0"},"border":{"radius":"12px","color":"#c7d1ff","width":"1px"}},"backgroundColor":"base","layout":{"type":"default"},"className":"past-event-card"} -->
 			<div class="wp-block-group past-event-card has-border-color has-base-background-color has-background">
 				<!-- wp:image {"sizeSlug":"large","className":"past-event-card-image"} -->
-				<figure class="wp-block-image size-large past-event-card-image"><img src="" alt="<?php esc_attr_e( 'Gutenberg: El futuro del editor', 'wpgranada26' ); ?>" /></figure>
+				<figure class="wp-block-image size-large past-event-card-image"><img src="" alt="<?php esc_attr_e( 'Gutenberg: El futuro del editor', 'wpcdmx-theme' ); ?>" /></figure>
 				<!-- /wp:image -->
 				<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
 				<div class="wp-block-group">
@@ -79,7 +79,7 @@
 			<!-- wp:group {"style":{"spacing":{"blockGap":"0"},"border":{"radius":"12px","color":"#c7d1ff","width":"1px"}},"backgroundColor":"base","layout":{"type":"default"},"className":"past-event-card"} -->
 			<div class="wp-block-group past-event-card has-border-color has-base-background-color has-background">
 				<!-- wp:image {"sizeSlug":"large","className":"past-event-card-image"} -->
-				<figure class="wp-block-image size-large past-event-card-image"><img src="" alt="<?php esc_attr_e( 'WordPress y accesibilidad web', 'wpgranada26' ); ?>" /></figure>
+				<figure class="wp-block-image size-large past-event-card-image"><img src="" alt="<?php esc_attr_e( 'WordPress y accesibilidad web', 'wpcdmx-theme' ); ?>" /></figure>
 				<!-- /wp:image -->
 				<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
 				<div class="wp-block-group">

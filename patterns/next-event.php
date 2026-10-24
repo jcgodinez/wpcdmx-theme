@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Próximo Evento
- * Slug: wpgranada26/next-event
- * Categories: wpgranada
+ * Slug: wpcdmx-theme/next-event
+ * Categories: wpcdmx
  * Description: Próximo evento del CPT meetings, dinámico, filtrando por fecha mayor a hoy.
  * Keywords: evento, meetup, próximo
  */

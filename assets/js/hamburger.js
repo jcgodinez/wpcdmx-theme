@@ -2,13 +2,13 @@
 	'use strict';
 
 	function initMobileNav() {
-		var overlay = document.getElementById( 'wpgranada-mobile-overlay' );
+		var overlay = document.getElementById( 'wpcdmx-mobile-overlay' );
 		if ( ! overlay ) { return; }
 
 		var btn = document.querySelector( '.site-header__hamburger' );
 		if ( ! btn ) { return; }
 
-		var closeBtn = overlay.querySelector( '.wpgranada-mobile-overlay__close' );
+		var closeBtn = overlay.querySelector( '.wpcdmx-mobile-overlay__close' );
 
 		function openMenu() {
 			overlay.classList.add( 'is-open' );

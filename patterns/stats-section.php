@@ -1,14 +1,14 @@
 <?php
 /**
  * Title: Estadísticas de la Comunidad
- * Slug: wpgranada26/stats-section
- * Categories: wpgranada
+ * Slug: wpcdmx-theme/stats-section
+ * Categories: wpcdmx
  * Description: Sección con contadores de la comunidad sobre fondo azul.
  * Keywords: stats, estadísticas, comunidad, números
  */
 ?>
-<!-- wp:group {"metadata":{"categories":["wpgranada"],"patternName":"wpgranada26/stats-section","name":"Estadísticas de la Comunidad"},"align":"full","className":"has-base-color has-text-color","style":{"spacing":{"padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100","left":"var:preset|spacing|100","right":"var:preset|spacing|100"},"blockGap":"3.5rem"}},"backgroundColor":"primary"} -->
-<div class="wp-block-group alignfull has-base-color has-text-color has-primary-background-color has-background wpgranada-stats-section"><!-- wp:group {"className":"alignwide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
+<!-- wp:group {"metadata":{"categories":["wpcdmx"],"patternName":"wpcdmx-theme/stats-section","name":"Estadísticas de la Comunidad"},"align":"full","className":"has-base-color has-text-color","style":{"spacing":{"padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100","left":"var:preset|spacing|100","right":"var:preset|spacing|100"},"blockGap":"3.5rem"}},"backgroundColor":"primary"} -->
+<div class="wp-block-group alignfull has-base-color has-text-color has-primary-background-color has-background wpcdmx-stats-section"><!-- wp:group {"className":"alignwide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"style":{"typography":{"textAlign":"center"}},"textColor":"base","fontSize":"huge","fontFamily":"heading"} -->
 <h2 class="wp-block-heading has-text-align-center has-base-color has-text-color has-heading-font-family has-huge-font-size">Una comunidad en crecimiento</h2>
 <!-- /wp:heading -->

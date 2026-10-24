@@ -1,8 +1,8 @@
-function wpgranadaInitMarquee(section) {
+function wpcdmxInitMarquee(section) {
     if (!section) return;
     if (section.dataset.marqueeInit) return;
 
-    var itemsGroup = section.querySelector('.wpgranada-marquee-items');
+    var itemsGroup = section.querySelector('.wpcdmx-marquee-items');
     if (!itemsGroup) return;
 
     var paragraphs = itemsGroup.querySelectorAll('p');
@@ -16,20 +16,20 @@ function wpgranadaInitMarquee(section) {
 
     section.dataset.marqueeInit = '1';
 
-    var dot = '<span class="wpgranada-marquee-dot">•</span>';
+    var dot = '<span class="wpcdmx-marquee-dot">•</span>';
     var sequence = texts.map(function (t) { return t + ' ' + dot + ' '; }).join('');
     var oneCopy = sequence + sequence;
 
     var track = document.createElement('div');
-    track.className = 'wpgranada-marquee';
+    track.className = 'wpcdmx-marquee';
     track.innerHTML =
-        '<span class="wpgranada-marquee-content">' + oneCopy + '</span>' +
-        '<span class="wpgranada-marquee-content" aria-hidden="true">' + oneCopy + '</span>';
+        '<span class="wpcdmx-marquee-content">' + oneCopy + '</span>' +
+        '<span class="wpcdmx-marquee-content" aria-hidden="true">' + oneCopy + '</span>';
 
     itemsGroup.style.cssText = 'display:none!important';
     section.appendChild(track);
 
-    var copyEl = track.querySelector('.wpgranada-marquee-content');
+    var copyEl = track.querySelector('.wpcdmx-marquee-content');
     var copyWidth = copyEl.offsetWidth;
     if (!copyWidth) return;
 
@@ -50,12 +50,12 @@ function wpgranadaInitMarquee(section) {
     requestAnimationFrame(tick);
 }
 
-function wpgranadaInitAllMarquees() {
-    document.querySelectorAll('.wpgranada-marquee-section').forEach(wpgranadaInitMarquee);
+function wpcdmxInitAllMarquees() {
+    document.querySelectorAll('.wpcdmx-marquee-section').forEach(wpcdmxInitMarquee);
 }
 
 if (document.readyState === 'complete') {
-    wpgranadaInitAllMarquees();
+    wpcdmxInitAllMarquees();
 } else {
-    window.addEventListener('load', wpgranadaInitAllMarquees);
+    window.addEventListener('load', wpcdmxInitAllMarquees);
 }

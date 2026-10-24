@@ -1,14 +1,14 @@
 <?php
 /**
  * Title: Canales de la Comunidad
- * Slug: wpgranada26/channels-section
- * Categories: wpgranada
+ * Slug: wpcdmx-theme/channels-section
+ * Categories: wpcdmx
  * Description: Grid de cinco tarjetas con los canales de comunicación de la comunidad.
  * Keywords: canales, meetup, youtube, instagram, linkedin, tiktok, contacto
  */
 ?>
-<!-- wp:group {"metadata":{"categories":["wpgranada"],"patternName":"wpgranada26/channels-section","name":"Canales de la Comunidad"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100","left":"var:preset|spacing|100","right":"var:preset|spacing|100"},"blockGap":"var:preset|spacing|80"},"color":{"background":"#f5f7fa"}}} -->
-<div class="wp-block-group alignfull has-background wpgranada-channels-section"><!-- wp:group {"className":"alignwide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
+<!-- wp:group {"metadata":{"categories":["wpcdmx"],"patternName":"wpcdmx-theme/channels-section","name":"Canales de la Comunidad"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100","left":"var:preset|spacing|100","right":"var:preset|spacing|100"},"blockGap":"var:preset|spacing|80"},"color":{"background":"#f5f7fa"}}} -->
+<div class="wp-block-group alignfull has-background wpcdmx-channels-section"><!-- wp:group {"className":"alignwide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.1em"}},"textColor":"primary","fontSize":"x-small","fontFamily":"body"} -->
 <p class="has-primary-color has-text-color has-body-font-family has-x-small-font-size is-label">ÚNETE A LA CONVERSACIÓN</p>
 <!-- /wp:paragraph -->
@@ -21,7 +21,7 @@
 <!-- wp:group {"className":"alignwide community-channels-grid","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide community-channels-grid"><!-- wp:group {"className":"channel-card","style":{"spacing":{"padding":{"top":"2.5rem","bottom":"2.5rem","left":"2.5rem","right":"2.5rem"},"blockGap":"var:preset|spacing|40"},"border":{"radius":"12px","color":"#c7d1ff","width":"1px"}},"backgroundColor":"base","layout":{"type":"default"}} -->
 <div class="wp-block-group channel-card has-border-color has-base-background-color has-background"><!-- wp:image {"width":"40px","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized channel-card__icon"><img src="/wp-content/themes/wpgranada26/assets/images/meetup.svg" alt="Meetup"/></figure>
+<figure class="wp-block-image size-full is-resized channel-card__icon"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/meetup.svg" alt="Meetup"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"x-large","fontFamily":"heading"} -->
@@ -39,7 +39,7 @@
 
 <!-- wp:group {"className":"channel-card","style":{"spacing":{"padding":{"top":"2.5rem","bottom":"2.5rem","left":"2.5rem","right":"2.5rem"},"blockGap":"var:preset|spacing|40"},"border":{"radius":"12px","color":"#c7d1ff","width":"1px"}},"backgroundColor":"base","layout":{"type":"default"}} -->
 <div class="wp-block-group channel-card has-border-color has-base-background-color has-background"><!-- wp:image {"width":"40px","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized channel-card__icon"><img src="/wp-content/themes/wpgranada26/assets/images/youtube.svg" alt="YouTube"/></figure>
+<figure class="wp-block-image size-full is-resized channel-card__icon"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/youtube.svg" alt="YouTube"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"x-large","fontFamily":"heading"} -->
@@ -75,7 +75,7 @@
 
 <!-- wp:group {"className":"channel-card","style":{"spacing":{"padding":{"top":"2.5rem","bottom":"2.5rem","left":"2.5rem","right":"2.5rem"},"blockGap":"var:preset|spacing|40"},"border":{"radius":"12px","color":"#c7d1ff","width":"1px"}},"backgroundColor":"base","layout":{"type":"default"}} -->
 <div class="wp-block-group channel-card has-border-color has-base-background-color has-background"><!-- wp:image {"width":"40px","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized channel-card__icon"><img src="/wp-content/themes/wpgranada26/assets/images/linkedin.svg" alt="LinkedIn"/></figure>
+<figure class="wp-block-image size-full is-resized channel-card__icon"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/linkedin.svg" alt="LinkedIn"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"x-large","fontFamily":"heading"} -->
@@ -93,7 +93,7 @@
 
 <!-- wp:group {"className":"channel-card","style":{"spacing":{"padding":{"top":"2.5rem","bottom":"2.5rem","left":"2.5rem","right":"2.5rem"},"blockGap":"var:preset|spacing|40"},"border":{"radius":"12px","color":"#c7d1ff","width":"1px"}},"backgroundColor":"base","layout":{"type":"default"}} -->
 <div class="wp-block-group channel-card has-border-color has-base-background-color has-background"><!-- wp:image {"width":"40px","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized channel-card__icon"><img src="/wp-content/themes/wpgranada26/assets/images/tiktok.svg" alt="TikTok"/></figure>
+<figure class="wp-block-image size-full is-resized channel-card__icon"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/tiktok.svg" alt="TikTok"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"x-large","fontFamily":"heading"} -->

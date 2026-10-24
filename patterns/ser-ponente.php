@@ -1,13 +1,13 @@
 <?php
 /**
  * Title: Ser Ponente
- * Slug: wpgranada26/ser-ponente
- * Categories: wpgranada
+ * Slug: wpcdmx-theme/ser-ponente
+ * Categories: wpcdmx
  * Description: Sección para invitar a ser ponente con formulario de Gravity Forms.
  * Keywords: ponente, speaker, formulario, charla
  */
 ?>
-<!-- wp:group {"metadata":{"categories":["wpgranada"],"patternName":"wpgranada26/ser-ponente","name":"Ser Ponente"},"align":"full","className":"ser-ponente-section","layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"categories":["wpcdmx"],"patternName":"wpcdmx-theme/ser-ponente","name":"Ser Ponente"},"align":"full","className":"ser-ponente-section","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull ser-ponente-section"><!-- wp:columns {"verticalAlignment":"top","style":{"spacing":{"blockGap":{"left":"4rem"},"padding":{"top":"5rem","bottom":"5rem"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-top" style="padding-top:5rem;padding-bottom:5rem"><!-- wp:column {"verticalAlignment":"top","width":"50%","className":"ser-ponente-col-text"} -->
 <div class="wp-block-column is-vertically-aligned-top ser-ponente-col-text" style="flex-basis:50%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|60"}},"layout":{"type":"default"}} -->

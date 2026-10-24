@@ -11,7 +11,7 @@ Block theme para la comunidad WordPress Granada. Diseñado para mostrar eventos,
 ## Estructura
 
 ```
-wpgranada26/
+wpcdmx-theme/
 ├── style.css                  # Metadatos del tema y CSS mínimo
 ├── theme.json                 # Sistema de diseño completo
 ├── functions.php              # Categorías de patrones y soporte del tema

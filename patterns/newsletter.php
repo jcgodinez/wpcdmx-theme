@@ -1,14 +1,14 @@
 <?php
 /**
  * Title: Newsletter
- * Slug: wpgranada26/newsletter
- * Categories: wpgranada
+ * Slug: wpcdmx-theme/newsletter
+ * Categories: wpcdmx
  * Description: Sección de suscripción al newsletter con formulario de Gravity Forms.
  * Keywords: newsletter, suscripción, email, formulario
  */
 ?>
-<!-- wp:group {"metadata":{"categories":["wpgranada"],"patternName":"wpgranada26/newsletter","name":"Newsletter"},"align":"full","className":"wpgranada-newsletter-wrapper","style":{"spacing":{"padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100","left":"var:preset|spacing|100","right":"var:preset|spacing|100"}}}} -->
-<div class="wp-block-group alignfull wpgranada-newsletter-wrapper" style="padding-top:var(--wp--preset--spacing--100);padding-right:var(--wp--preset--spacing--100);padding-bottom:var(--wp--preset--spacing--100);padding-left:var(--wp--preset--spacing--100)"><!-- wp:group {"className":"alignwide newsletter-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|90","bottom":"var:preset|spacing|90","left":"var:preset|spacing|90","right":"var:preset|spacing|90"}},"border":{"radius":"40px"}},"backgroundColor":"primary"} -->
+<!-- wp:group {"metadata":{"categories":["wpcdmx"],"patternName":"wpcdmx-theme/newsletter","name":"Newsletter"},"align":"full","className":"wpcdmx-newsletter-wrapper","style":{"spacing":{"padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100","left":"var:preset|spacing|100","right":"var:preset|spacing|100"}}}} -->
+<div class="wp-block-group alignfull wpcdmx-newsletter-wrapper" style="padding-top:var(--wp--preset--spacing--100);padding-right:var(--wp--preset--spacing--100);padding-bottom:var(--wp--preset--spacing--100);padding-left:var(--wp--preset--spacing--100)"><!-- wp:group {"className":"alignwide newsletter-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|90","bottom":"var:preset|spacing|90","left":"var:preset|spacing|90","right":"var:preset|spacing|90"}},"border":{"radius":"40px"}},"backgroundColor":"primary"} -->
 <div class="wp-block-group alignwide newsletter-section has-primary-background-color has-background" style="border-radius:40px;padding-top:var(--wp--preset--spacing--90);padding-right:var(--wp--preset--spacing--90);padding-bottom:var(--wp--preset--spacing--90);padding-left:var(--wp--preset--spacing--90)"><!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|90"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"50%","className":"newsletter-col"} -->
 <div class="wp-block-column is-vertically-aligned-center newsletter-col" style="flex-basis:50%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"default"}} -->

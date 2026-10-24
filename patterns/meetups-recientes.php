@@ -1,14 +1,14 @@
 <?php
 /**
  * Title: Meetups Recientes
- * Slug: wpgranada26/meetups-recientes
- * Categories: wpgranada
+ * Slug: wpcdmx-theme/meetups-recientes
+ * Categories: wpcdmx
  * Description: Grid dinámico de meetups recientes del plugin Community Meetings.
  * Keywords: meetups, charlas, eventos, grid, dinámico
  */
 ?>
-<!-- wp:group {"metadata":{"categories":["wpgranada"],"patternName":"wpgranada26/meetups-recientes","name":"Meetups Recientes"},"align":"full","className":"wpgranada-meetups-wrapper","style":{"spacing":{"padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100"},"blockGap":"var:preset|spacing|70"}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull wpgranada-meetups-wrapper has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--100);padding-bottom:var(--wp--preset--spacing--100)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
+<!-- wp:group {"metadata":{"categories":["wpcdmx"],"patternName":"wpcdmx-theme/meetups-recientes","name":"Meetups Recientes"},"align":"full","className":"wpcdmx-meetups-wrapper","style":{"spacing":{"padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100"},"blockGap":"var:preset|spacing|70"}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull wpcdmx-meetups-wrapper has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--100);padding-bottom:var(--wp--preset--spacing--100)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"has-accent-color has-text-color has-body-font-family has-x-small-font-size is-label","style":{"typography":{"fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.1em"}},"textColor":"accent","fontSize":"x-small"} -->
 <p class="has-accent-color has-text-color has-body-font-family has-x-small-font-size is-label" style="font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Últimas publicaciones</p>

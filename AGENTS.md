@@ -1,8 +1,8 @@
 # WPGranada — AGENTS.md
 
-Block theme (FSE) for the WordPress Granada community (wpgranada.es). Theme slug `wpgranada26`; text domain `wpgranada26` (as in `style.css`; function prefix `wpgranada26_`).
+Block theme (FSE) for the WordPress Granada community (wpgranada.es). Theme slug `wpcdmx-theme`; text domain `wpcdmx-theme` (as in `style.css`; function prefix `wpcdmx_`).
 WordPress 6.5+, PHP 7.4+, `theme.json` v3. Code and comments in English; site content in Spanish.
-Repo: `github.com/WPGranada/wpgranada26` (`origin`). Contributors work from forks; open PRs against `origin`.
+Repo: `github.com/WPGranada/wpcdmx-theme` (`origin`). Contributors work from forks; open PRs against `origin`.
 
 ## Source of truth
 
@@ -26,7 +26,7 @@ No new lint errors. Then check every touched template/pattern at 1440, 768 and 3
 - `style.css` — theme header + minimal CSS only; enqueued in `functions.php`.
 - `templates/` — `front-page`, `home`, `index`, `single`, `page`, `archive`, `search`, `404`.
 - `parts/` — `header.html`, `footer.html`.
-- `patterns/` — PHP patterns, category `wpgranada`: `hero-section`, `next-event`, `past-events`, `stats-section`, `channels-section`, `cta-speaker`, `reproductor-de-podcast`.
+- `patterns/` — PHP patterns, category `wpcdmx`: `hero-section`, `next-event`, `past-events`, `stats-section`, `channels-section`, `cta-speaker`, `reproductor-de-podcast`.
 - `assets/fonts/` local `.woff2`; `assets/images/` static images.
 - `docs/diseno-web.pen` — design file. Open only through the Pencil MCP, never read as text.
 - `functions.php` — pattern category, `meetings` upcoming-events query filter, theme supports, stylesheet enqueue. Keep it small; new features go in `inc/`.
@@ -52,7 +52,7 @@ the rendered page. Verify visual work with a screenshot instead.
 - Palette: `primary` (#3858E9), `primary-dark`, `primary-light`, `primary-muted`, `accent` (orange #F97316), `accent-light`, `base` (white), `background-light`, `contrast` (text), `secondary`, `tertiary`, `muted`. Gradients: `primary-gradient`, `community-gradient`.
 - Fonts: Plus Jakarta Sans (`heading`, 700–800), Inter (`body`, 400–700). Sizes `x-small` → `colossal`, fluid.
 - Spacing presets `10`–`100`; custom tokens in `settings.custom`: `borderRadius` (small/medium/large/pill) and `spacing.section`.
-- CPT `meetings` comes from the `community-meetings` plugin; `wpgranada26_upcoming_meetings_query` shows only upcoming ones (publish + future, ASC). Do not register the CPT in the theme.
+- CPT `meetings` comes from the `community-meetings` plugin; `wpcdmx_upcoming_meetings_query` shows only upcoming ones (publish + future, ASC). Do not register the CPT in the theme.
 - Plugins: `community-meetings`, `gravityforms`, `contact-form-7`, `powerpress` (podcast pattern), `seo-by-rank-math`, Icon Block (channels pattern icons), FrontBlocks (`frbl*` effects).
 - Key links: Meetup `meetup.com/es-es/granada-wordpress-meetup/`; internal pages `/ser-ponente/`, `/contacta/`.
 
@@ -66,7 +66,7 @@ the rendered page. Verify visual work with a screenshot instead.
 - `!important` in `style.css` (mobile padding overrides).
 - `style=""` in `patterns/cta-speaker.php` (line-height, button radius/padding/weight) — move to block attributes or `theme.json`.
 - `front-page.html` holds the whole homepage content (hero, activities, news, CTA) — move to patterns and leave the shell.
-- Text marquee (`wpgranada-marquee`) — migrate to FrontBlocks.
+- Text marquee (`wpcdmx-marquee`) — migrate to FrontBlocks.
 - `theme.json` `medium` font size is 1rem (16px), below the 17px body minimum — raise it or map body text to `large`.
 - `readme.md` documents an older palette (`contrast` #1e1e1e etc.) — sync with `theme.json`.
 - `skills-lock.json` pins only `wp-block-development` and `wp-block-themes` — add `close-wpdev-block-themes`.
