@@ -15,11 +15,11 @@
 <!-- /wp:heading -->
 
 <!-- wp:heading {"style":{"typography":{"fontWeight":"700","textAlign":"left"}},"textColor":"contrast","fontSize":"x-large","fontFamily":"heading"} -->
-<h2 class="wp-block-heading has-text-align-left has-contrast-color has-text-color has-heading-font-family has-x-large-font-size" style="font-weight:700">¿Qué es WPGranada?</h2>
+<h2 class="wp-block-heading has-text-align-left has-contrast-color has-text-color has-heading-font-family has-x-large-font-size" style="font-weight:700">¿Qué es WordPress CDMX?</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"has-muted-color has-text-color has-body-font-family","style":{"typography":{"textAlign":"left"}},"textColor":"muted","fontSize":"small"} -->
-<p class="has-text-align-left has-muted-color has-text-color has-body-font-family has-small-font-size">WordPress Granada está formada por un grupo de gente de Granada y alrededores que, en diferentes niveles de conocimiento y ámbitos, utilizan WordPress.</p>
+<p class="has-text-align-left has-muted-color has-text-color has-body-font-family has-small-font-size">WordPress CDMX está formada por un grupo de gente de la Ciudad de México y alrededores que, en diferentes niveles de conocimiento y ámbitos, utilizan WordPress.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"has-muted-color has-text-color has-body-font-family","style":{"typography":{"textAlign":"left"}},"textColor":"muted","fontSize":"small"} -->
@@ -34,7 +34,7 @@
 
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"about-hero-img","style":{"border":{"radius":"20px","width":"0px","style":"none"}}} -->
-<figure class="wp-block-image size-full has-custom-border about-hero-img"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/about-hero.png" alt="Comunidad WordPress Granada" style="border-style:none;border-width:0px;border-radius:20px"/></figure>
+<figure class="wp-block-image size-full has-custom-border about-hero-img"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/about-hero.png" alt="Comunidad WordPress CDMX" style="border-style:none;border-width:0px;border-radius:20px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

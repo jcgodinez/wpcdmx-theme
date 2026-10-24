@@ -7,6 +7,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+require_once get_template_directory() . '/inc/community-links.php';
+
 add_action( 'init', 'wpcdmx_register_pattern_categories', 1 );
 /**
  * Register custom pattern categories and block styles.
@@ -14,7 +16,7 @@ add_action( 'init', 'wpcdmx_register_pattern_categories', 1 );
  * @return void
  */
 function wpcdmx_register_pattern_categories() {
-	register_block_pattern_category( 'wpcdmx', array( 'label' => __( 'WPGranada', 'wpcdmx-theme' ) ) );
+	register_block_pattern_category( 'wpcdmx', array( 'label' => __( 'WordPress CDMX', 'wpcdmx-theme' ) ) );
 
 	register_block_style(
 		'core/paragraph',
@@ -110,15 +112,15 @@ function wpcdmx_footer_eventos_shortcode() {
 	$items = array(
 		array(
 			'label' => __( 'Próximos eventos', 'wpcdmx-theme' ),
-			'url'   => 'https://www.meetup.com/es-es/granada-wordpress-meetup/events/',
+			'url'   => wpcdmx_link( 'events' ),
 		),
 		array(
 			'label' => __( 'Eventos pasados', 'wpcdmx-theme' ),
-			'url'   => 'https://www.meetup.com/es-ES/granada-wordpress-meetup/events/past/',
+			'url'   => wpcdmx_link( 'events_past' ),
 		),
 		array(
 			'label' => __( 'Calendario', 'wpcdmx-theme' ),
-			'url'   => 'https://www.meetup.com/es-ES/granada-wordpress-meetup/events/calendar/',
+			'url'   => wpcdmx_link( 'events_calendar' ),
 		),
 	);
 
@@ -134,11 +136,11 @@ function wpcdmx_footer_comunidad_shortcode() {
 		),
 		array(
 			'label' => __( 'Ser ponente', 'wpcdmx-theme' ),
-			'url'   => 'https://wp-granada-beta.local/ser-ponente/',
+			'url'   => wpcdmx_link( 'speaker' ),
 		),
 		array(
 			'label' => __( 'Patrocinadores', 'wpcdmx-theme' ),
-			'url'   => 'https://close.technology/',
+			'url'   => wpcdmx_link( 'sponsors' ),
 		),
 	);
 
@@ -190,28 +192,28 @@ function wpcdmx_footer_social_shortcode() {
 	$social_links = array(
 		array(
 			'label' => 'LinkedIn',
-			'url'   => 'https://www.linkedin.com/company/closemarketing/posts/',
+			'url'   => wpcdmx_link( 'linkedin' ),
 			'icon'  => 'linkedin.svg',
 		),
 		array(
 			'label' => 'Instagram',
-			'url'   => 'https://www.instagram.com/closemarketing/',
+			'url'   => wpcdmx_link( 'instagram' ),
 			'icon'  => 'instagram.svg',
 		),
 		array(
 			'label' => 'YouTube',
-			'url'   => 'https://www.youtube.com/@ClosemarketingEs',
+			'url'   => wpcdmx_link( 'youtube' ),
 			'icon'  => 'youtube.svg',
 		),
 		array(
 			'label' => 'TikTok',
-			'url'   => 'https://www.tiktok.com/@closemarketing',
+			'url'   => wpcdmx_link( 'tiktok' ),
 			'icon'  => 'tiktok.svg',
 		),
 	);
 
 	$base_url = trailingslashit( get_template_directory_uri() ) . 'assets/images/';
-	$html     = '<ul class="wpcdmx-footer__social-links" aria-label="' . esc_attr__( 'Redes sociales de WPGranada', 'wpcdmx-theme' ) . '">';
+	$html     = '<ul class="wpcdmx-footer__social-links" aria-label="' . esc_attr__( 'Redes sociales de WordPress CDMX', 'wpcdmx-theme' ) . '">';
 
 	foreach ( $social_links as $social_link ) {
 		$html .= '<li><a href="' . esc_url( $social_link['url'] ) . '" target="_blank" rel="noopener noreferrer" aria-label="' . esc_attr( $social_link['label'] ) . '">';
@@ -550,7 +552,7 @@ function wpcdmx_mobile_overlay() {
 				<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
 			</svg>
 		</button>
-		<img class="wpcdmx-mobile-overlay__logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-wpcdmx.svg" alt="WordPress Granada" width="160">
+		<img class="wpcdmx-mobile-overlay__logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-wpcdmx.svg" alt="WordPress CDMX" width="160">
 		<?php
 		wp_nav_menu( array(
 			'theme_location' => 'menu-principal',
@@ -559,7 +561,7 @@ function wpcdmx_mobile_overlay() {
 			'fallback_cb'    => false,
 		) );
 		?>
-		<a class="wpcdmx-mobile-overlay__cta wp-element-button" href="https://www.meetup.com/es-es/granada-wordpress-meetup/" target="_blank" rel="noreferrer noopener">
+		<a class="wpcdmx-mobile-overlay__cta wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>" target="_blank" rel="noreferrer noopener">
 			<?php esc_html_e( 'Únete al Meetup', 'wpcdmx-theme' ); ?>
 		</a>
 	</div>

@@ -10,7 +10,7 @@
 <!-- wp:columns {"verticalAlignment":"center","metadata":{"categories":["wpcdmx"],"patternName":"wpcdmx-theme/how-we-organize","name":"Cómo nos organizamos"},"className":"alignwide organize-section","style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem","left":"var:preset|spacing|60","right":"var:preset|spacing|60"},"blockGap":{"left":"4rem"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center alignwide organize-section" style="padding-top:4rem;padding-bottom:4rem;padding-left:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60)"><!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"organize-img","style":{"border":{"radius":"20px","width":"0px","style":"none"}}} -->
-<figure class="wp-block-image size-full has-custom-border organize-img"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/about-hero.png" alt="Comunidad WordPress Granada organizando meetups" style="border-style:none;border-width:0px;border-radius:20px"/></figure>
+<figure class="wp-block-image size-full has-custom-border organize-img"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/about-hero.png" alt="Comunidad WordPress CDMX organizando meetups" style="border-style:none;border-width:0px;border-radius:20px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -29,7 +29,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"has-muted-color has-text-color has-body-font-family","style":{"typography":{"textAlign":"left"}},"textColor":"muted","fontSize":"small"} -->
-<p class="has-text-align-left has-muted-color has-text-color has-body-font-family has-small-font-size">Cada charla es propuesta por un participante de la comunidad, de forma altruista. Los co-organizadores de la Meetup colaboran en todos los aspectos logísticos y de marketing: facilitan un lugar para el encuentro, lo difunden en wpgranada.es y redes sociales, realizan grabaciones para wordpress.tv,...</p>
+<p class="has-text-align-left has-muted-color has-text-color has-body-font-family has-small-font-size">Cada charla es propuesta por un participante de la comunidad, de forma altruista. Los co-organizadores de la Meetup colaboran en todos los aspectos logísticos y de marketing: facilitan un lugar para el encuentro, lo difunden en el sitio de la comunidad y en redes sociales, realizan grabaciones para wordpress.tv,...</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>

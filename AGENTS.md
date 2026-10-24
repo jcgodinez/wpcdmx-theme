@@ -1,8 +1,8 @@
-# WPGranada — AGENTS.md
+# WordPress CDMX — AGENTS.md
 
-Block theme (FSE) for the WordPress Granada community (wpgranada.es). Theme slug `wpcdmx-theme`; text domain `wpcdmx-theme` (as in `style.css`; function prefix `wpcdmx_`).
-WordPress 6.5+, PHP 7.4+, `theme.json` v3. Code and comments in English; site content in Spanish.
-Repo: `github.com/WPGranada/wpcdmx-theme` (`origin`). Contributors work from forks; open PRs against `origin`.
+Block theme (FSE) for the WordPress CDMX community (Mexico City). Forked from `WPGranada/wpgranada26`. Theme slug `wpcdmx-theme`; text domain `wpcdmx-theme` (as in `style.css`; function prefix `wpcdmx_`, CSS/shortcode prefix `wpcdmx`).
+WordPress 6.5+, PHP 7.4+, `theme.json` v3. Code and comments in English; site content in Spanish (Mexico).
+Repo: `github.com/jcgodinez/wpcdmx-theme` (`origin`). Upstream: `github.com/WPGranada/wpgranada26`.
 
 ## Source of truth
 
@@ -30,6 +30,8 @@ No new lint errors. Then check every touched template/pattern at 1440, 768 and 3
 - `assets/fonts/` local `.woff2`; `assets/images/` static images.
 - `docs/diseno-web.pen` — design file. Open only through the Pencil MCP, never read as text.
 - `functions.php` — pattern category, `meetings` upcoming-events query filter, theme supports, stylesheet enqueue. Keep it small; new features go in `inc/`.
+- `inc/community-links.php` — every external community URL (`wpcdmx_link( 'key' )`). Never hardcode community URLs in PHP patterns; HTML templates/parts use `#` until the real URL is known.
+- Never hardcode `/wp-content/themes/<slug>/` paths: CSS uses paths relative to `style.css`, PHP uses `get_template_directory_uri()`.
 
 ## Hard rules (enforced by the linter)
 
@@ -54,7 +56,8 @@ the rendered page. Verify visual work with a screenshot instead.
 - Spacing presets `10`–`100`; custom tokens in `settings.custom`: `borderRadius` (small/medium/large/pill) and `spacing.section`.
 - CPT `meetings` comes from the `community-meetings` plugin; `wpcdmx_upcoming_meetings_query` shows only upcoming ones (publish + future, ASC). Do not register the CPT in the theme.
 - Plugins: `community-meetings`, `gravityforms`, `contact-form-7`, `powerpress` (podcast pattern), `seo-by-rank-math`, Icon Block (channels pattern icons), FrontBlocks (`frbl*` effects).
-- Key links: Meetup `meetup.com/es-es/granada-wordpress-meetup/`; internal pages `/ser-ponente/`, `/contacta/`.
+- Key links: see `inc/community-links.php`; internal pages `/ser-ponente/`, `/patrocinadores/`, `/contacta/`.
+- Events: the CPT setup inherited from Granada (`community-meetings`, `metgs_meeting`) is under review. WordPress.org plans to move meetups from Meetup.com to GatherPress; the events section will target GatherPress once that plan firms up.
 
 ## Known exceptions
 

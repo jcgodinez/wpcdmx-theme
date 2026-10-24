@@ -17,11 +17,11 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.1em"}},"textColor":"accent","fontSize":"x-small","fontFamily":"body"} -->
-<p class="has-accent-color has-text-color has-body-font-family has-x-small-font-size" style="font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Estamos construyendo y fortaleciendo una comunidad tecnológica en Granada</p>
+<p class="has-accent-color has-text-color has-body-font-family has-x-small-font-size" style="font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Estamos construyendo y fortaleciendo una comunidad tecnológica en la Ciudad de México</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small","fontFamily":"body"} -->
-<p class="has-muted-color has-text-color has-body-font-family has-small-font-size">Estamos preparando las próximas charlas y talleres de la comunidad WordPress Granada para 2025, y nos encantaría contar contigo si tienes algo que compartir.</p>
+<p class="has-muted-color has-text-color has-body-font-family has-small-font-size">Estamos preparando las próximas charlas y talleres de la comunidad WordPress CDMX y nos encantaría contar contigo si tienes algo que compartir.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small","fontFamily":"body"} -->
@@ -62,7 +62,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small","fontFamily":"body"} -->
-<p class="has-muted-color has-text-color has-body-font-family has-small-font-size">Conoce a otras personas de tu sector en Granada y haz networking real.</p>
+<p class="has-muted-color has-text-color has-body-font-family has-small-font-size">Conoce a otras personas de tu sector en la CDMX y haz networking real.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

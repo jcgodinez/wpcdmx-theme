@@ -192,7 +192,7 @@ Tags: full-site-editing, block-patterns, custom-colors, custom-fonts, translatio
 }
 
 /* -------------------------------------------------------
-   WordPress Granada - Home editorial creativa
+   WordPress CDMX - Home editorial creativa
    ------------------------------------------------------- */
 
 .wpcdmx-home {
@@ -234,32 +234,6 @@ Tags: full-site-editing, block-patterns, custom-colors, custom-fonts, translatio
 	transform: rotate(-8deg);
 	pointer-events: none;
 	z-index: 0;
-}
-
-/* Imagen lineal de la Alhambra colocada en el hueco superior derecho */
-.wpcdmx-hero::after {
-	content: "";
-	position: absolute;
-
-	/*
-        La imagen antes salía encima de WORDPRESS.
-        Ahora la subimos al hueco superior derecho del hero.
-    */
-	top: clamp(0.75rem, 2.2vw, 2.25rem);
-	right: clamp(2.5rem, 6vw, 7rem);
-
-	width: clamp(520px, 58vw, 1050px);
-	height: clamp(90px, 12vw, 170px);
-
-	background-image: url("./assets/images/alhambra-line.png");
-	background-repeat: no-repeat;
-	background-position: center right;
-	background-size: contain;
-
-	opacity: 0.20;
-	mix-blend-mode: multiply;
-	pointer-events: none;
-	z-index: 1;
 }
 
 /* El contenido principal queda por encima de fondos decorativos */
@@ -1567,7 +1541,7 @@ a:hover {
 }
 
 /* ==========================================================
-   Home - Sección ¿Qué es WordPress Granada? según Figma
+   Home - Sección ¿Qué es WordPress CDMX? según Figma
    ========================================================== */
 
 .wpcdmx-community-intro {
@@ -8402,7 +8376,7 @@ body:has(.wpcdmx-article-page) .entry-content p {
    HEADER - LOGO WPGRANADA Y AJUSTE MENÚ
    ========================================================== */
 
-/* Sustituye el logo actual por el logo completo de WPGranada */
+/* Sustituye el logo actual por el logo completo de WordPress CDMX */
 .wp-site-blocks>.wp-block-template-part:first-child .wp-block-site-logo img {
 	content: url("assets/images/logo-wpcdmx.png") !important;
 	width: 215px !important;
@@ -8727,7 +8701,7 @@ body .wp-site-blocks>.wp-block-template-part:first-child {
 	display: none !important;
 }
 
-/* Si queda un párrafo antiguo tipo "Comunidad local de WordPress en Granada", lo ocultamos */
+/* Si queda un párrafo antiguo tipo "Comunidad local de WordPress", lo ocultamos */
 .wp-site-blocks>.wp-block-template-part:first-child .wp-block-site-logo+p,
 .wp-site-blocks>.wp-block-template-part:first-child .wp-block-site-logo~p {
 	display: none !important;
@@ -9995,7 +9969,7 @@ body .wp-site-blocks>.wp-block-template-part:first-child {
 .ponente-reason__icon { line-height: 1.4; flex-shrink: 0; width: 1.5rem; }
 .ponente-form-card { position: sticky; top: 90px; }
 
-/* Footer WPGranada */
+/* Footer */
 .site-footer.wpcdmx-footer.wp-block-group {
 	box-sizing: border-box;
 	padding: 4rem 1.5rem 1.5rem;

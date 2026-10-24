@@ -17,7 +17,7 @@
 <!-- /wp:group -->
 
 <!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"lineHeight":"1.1"}},"textColor":"contrast","fontSize":"gigantic","fontFamily":"heading"} -->
-<h1 class="wp-block-heading has-text-align-center has-contrast-color has-text-color has-heading-font-family has-gigantic-font-size lh-tight">Desarrolladores y profesionales web de Granada</h1>
+<h1 class="wp-block-heading has-text-align-center has-contrast-color has-text-color has-heading-font-family has-gigantic-font-size lh-tight">Desarrolladores y profesionales web de la Ciudad de México</h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.5"}},"textColor":"secondary","fontSize":"large","fontFamily":"body"} -->

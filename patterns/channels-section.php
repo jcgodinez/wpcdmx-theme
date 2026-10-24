@@ -33,7 +33,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"primary","fontSize":"medium","fontFamily":"body"} -->
-<p class="has-primary-color has-text-color has-body-font-family has-medium-font-size fw-semibold"><a href="https://www.meetup.com/es-ES/wordpress-granada/">Ir a Meetup →</a></p>
+<p class="has-primary-color has-text-color has-body-font-family has-medium-font-size fw-semibold"><a href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>">Ir a Meetup →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -51,7 +51,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"primary","fontSize":"medium","fontFamily":"body"} -->
-<p class="has-primary-color has-text-color has-body-font-family has-medium-font-size fw-semibold"><a href="https://youtube.com/@wpgranada">Ver canal →</a></p>
+<p class="has-primary-color has-text-color has-body-font-family has-medium-font-size fw-semibold"><a href="<?php echo esc_url( wpcdmx_link( 'youtube' ) ); ?>">Ver canal →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -65,11 +65,11 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"textColor":"tertiary","fontSize":"medium","fontFamily":"body"} -->
-<p class="has-tertiary-color has-text-color has-body-font-family has-medium-font-size lh-relaxed">Descubre las novedades, eventos y momentos de la comunidad WordPress Granada</p>
+<p class="has-tertiary-color has-text-color has-body-font-family has-medium-font-size lh-relaxed">Descubre las novedades, eventos y momentos de la comunidad WordPress CDMX</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"primary","fontSize":"medium","fontFamily":"body"} -->
-<p class="has-primary-color has-text-color has-body-font-family has-medium-font-size fw-semibold"><a href="https://www.instagram.com/closemarketing/" target="_blank" rel="noopener noreferrer">Seguir en Instagram →</a></p>
+<p class="has-primary-color has-text-color has-body-font-family has-medium-font-size fw-semibold"><a href="<?php echo esc_url( wpcdmx_link( 'instagram' ) ); ?>" target="_blank" rel="noopener noreferrer">Seguir en Instagram →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -83,11 +83,11 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"textColor":"tertiary","fontSize":"medium","fontFamily":"body"} -->
-<p class="has-tertiary-color has-text-color has-body-font-family has-medium-font-size lh-relaxed">Conecta con profesionales, colaboradores y miembros de la comunidad WordPress Granada</p>
+<p class="has-tertiary-color has-text-color has-body-font-family has-medium-font-size lh-relaxed">Conecta con profesionales, colaboradores y miembros de la comunidad WordPress CDMX</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"primary","fontSize":"medium","fontFamily":"body"} -->
-<p class="has-primary-color has-text-color has-body-font-family has-medium-font-size fw-semibold"><a href="https://www.linkedin.com/company/closemarketing/posts/" target="_blank" rel="noopener noreferrer">Seguir en LinkedIn →</a></p>
+<p class="has-primary-color has-text-color has-body-font-family has-medium-font-size fw-semibold"><a href="<?php echo esc_url( wpcdmx_link( 'linkedin' ) ); ?>" target="_blank" rel="noopener noreferrer">Seguir en LinkedIn →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -105,7 +105,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"primary","fontSize":"medium","fontFamily":"body"} -->
-<p class="has-primary-color has-text-color has-body-font-family has-medium-font-size fw-semibold"><a href="https://www.tiktok.com/@closemarketing" target="_blank" rel="noopener noreferrer">Seguir en TikTok →</a></p>
+<p class="has-primary-color has-text-color has-body-font-family has-medium-font-size fw-semibold"><a href="<?php echo esc_url( wpcdmx_link( 'tiktok' ) ); ?>" target="_blank" rel="noopener noreferrer">Seguir en TikTok →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

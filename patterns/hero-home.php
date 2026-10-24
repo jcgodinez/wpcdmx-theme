@@ -12,11 +12,11 @@
 <div class="wp-block-columns are-vertically-aligned-top is-not-stacked-on-mobile alignwide"><!-- wp:column {"verticalAlignment":"top","className":"hero-home-col-text"} -->
 <div class="wp-block-column is-vertically-aligned-top hero-home-col-text"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"hero-home-label","textColor":"primary","fontSize":"x-small","fontFamily":"body"} -->
-<p class="hero-home-label has-primary-color has-text-color has-body-font-family has-x-small-font-size">Comunidad Local · Open Web · Granada</p>
+<p class="hero-home-label has-primary-color has-text-color has-body-font-family has-x-small-font-size">Comunidad Local · Open Web · CDMX</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":1,"className":"hero-home-title","textColor":"contrast","fontFamily":"heading"} -->
-<h1 class="wp-block-heading hero-home-title has-contrast-color has-text-color has-heading-font-family">WordPress Granada</h1>
+<h1 class="wp-block-heading hero-home-title has-contrast-color has-text-color has-heading-font-family">WordPress CDMX</h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"hero-home-tagline","textColor":"primary","fontSize":"xx-large","fontFamily":"heading"} -->
@@ -29,7 +29,7 @@
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"accent","textColor":"base","className":"hero-home-btn","fontSize":"medium","fontFamily":"body"} -->
-<div class="wp-block-button hero-home-btn"><a class="wp-block-button__link has-base-color has-accent-background-color has-text-color has-background has-body-font-family has-medium-font-size has-custom-font-size wp-element-button" href="https://www.meetup.com/es-ES/wordpress-granada/">Únete a las Meetup</a></div>
+<div class="wp-block-button hero-home-btn"><a class="wp-block-button__link has-base-color has-accent-background-color has-text-color has-background has-body-font-family has-medium-font-size has-custom-font-size wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>">Únete a las Meetup</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"backgroundColor":"primary","textColor":"base","className":"hero-home-btn","fontSize":"medium","fontFamily":"body"} -->
@@ -60,7 +60,7 @@
 
 <!-- wp:group {"className":"hero-event-card__location","style":{"spacing":{"blockGap":"0.4em"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 <div class="wp-block-group hero-event-card__location"><!-- wp:paragraph {"textColor":"muted","fontSize":"x-small","fontFamily":"body"} -->
-<p class="has-muted-color has-text-color has-body-font-family has-x-small-font-size">📍 Granada · Cámara de Comercio</p>
+<p class="has-muted-color has-text-color has-body-font-family has-x-small-font-size">📍 Ciudad de México</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

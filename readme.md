@@ -1,94 +1,60 @@
-# WP Granada 26 - Block Theme
+# WordPress CDMX - Block Theme
 
-Block theme para la comunidad WordPress Granada. Diseñado para mostrar eventos, meetups y conectar con la comunidad local de profesionales WordPress.
+Tema de bloques para la comunidad WordPress CDMX, en la Ciudad de México.
+
+Es un fork de [wpgranada26](https://github.com/WPGranada/wpgranada26), el tema de la comunidad WordPress Granada, publicado bajo GPL v2 o posterior. Gracias a su equipo por liberarlo.
 
 ## Requisitos
 
 - WordPress 6.5+
 - PHP 7.4+
-- Plugin recomendado: [Icon Block](https://wordpress.org/plugins/icon-block/) (para los iconos del patrón Canales)
+- Plugin recomendado: [Icon Block](https://wordpress.org/plugins/icon-block/) para los iconos del patrón Canales
 
-## Estructura
+## Instalación
 
-```
-wpcdmx-theme/
-├── style.css                  # Metadatos del tema y CSS mínimo
-├── theme.json                 # Sistema de diseño completo
-├── functions.php              # Categorías de patrones y soporte del tema
-├── templates/                 # Plantillas de bloque
-│   ├── index.html             # Plantilla principal (listado de posts)
-│   ├── home.html              # Plantilla de inicio (vacía para componer)
-│   ├── single.html            # Entrada individual
-│   ├── page.html              # Página estática
-│   ├── archive.html           # Archivo de categorías/tags
-│   ├── search.html            # Resultados de búsqueda
-│   └── 404.html               # Página no encontrada
-├── parts/                     # Partes de plantilla reutilizables
-│   ├── header.html            # Cabecera con logo y navegación
-│   └── footer.html            # Pie con columnas de enlaces y redes
-├── patterns/                  # Patrones de bloque
-│   ├── hero-section.php       # Hero con badge, título y CTAs
-│   ├── next-event.php         # Tarjeta horizontal de próximo evento
-│   ├── past-events.php        # Grid de 3 tarjetas de eventos pasados
-│   ├── stats-section.php      # Contadores sobre fondo azul
-│   ├── channels-section.php   # Grid de canales (Meetup, YouTube, Telegram)
-│   └── cta-speaker.php        # Call to Action para ser ponente
-├── assets/
-│   └── fonts/                 # Fuentes locales (Plus Jakarta Sans, Inter)
-└── styles/                    # Style variations (extensible)
+1. Descarga el repositorio (Code > Download ZIP).
+2. Descomprime y renombra la carpeta a `wpcdmx-theme`. El nombre de la carpeta debe coincidir con el text domain.
+3. Vuelve a comprimir y súbelo en Apariencia > Temas > Añadir nuevo > Subir tema.
+
+## Enlaces de la comunidad
+
+Todas las URLs externas que imprime el tema desde PHP están en `inc/community-links.php`. Los valores `#` son marcadores pendientes. Las plantillas y partes en HTML (header, single, 404, etc.) no pueden ejecutar PHP, así que sus botones también usan `#` hasta definir la URL final.
+
+También se pueden cambiar desde un plugin o tema hijo:
+
+```php
+add_filter( 'wpcdmx_community_links', function ( $links ) {
+	$links['meetup'] = 'https://www.meetup.com/...';
+	return $links;
+} );
 ```
 
-## Sistema de Diseño
+## Sistema de diseño
 
-### Colores
-| Token | Hex | Uso |
-|-------|-----|-----|
-| `primary` | `#3858e9` | Botones, enlaces, acentos |
-| `primary-dark` | `#213fd4` | Hover, sección stats |
-| `primary-light` | `#eff2ff` | Fondos alternos claros |
-| `primary-muted` | `#c7d1ff` | Badges, bordes de tarjetas |
-| `base` | `#ffffff` | Fondo principal |
-| `contrast` | `#1e1e1e` | Texto principal, footer |
-| `secondary` | `#40464d` | Texto secundario |
-| `tertiary` | `#656a71` | Texto terciario |
-| `muted` | `#979aa1` | Texto muy sutil |
+Todo vive en `theme.json`.
 
-### Tipografía
-- **Headings**: Plus Jakarta Sans (700, 800) - fluid typography
-- **Body**: Inter (400–700) - fluid typography
-- Tamaños desde `x-small` (0.8125rem) hasta `colossal` (4.5rem)
+| Token | Hex | Nombre |
+|-------|-----|--------|
+| `primary` | `#3858E9` | Azul WordPress |
+| `primary-dark` | `#213FD4` | Azul oscuro |
+| `primary-light` | `#EFF2FF` | Azul muy claro |
+| `primary-muted` | `#C7D1FF` | Azul suave |
+| `accent` | `#F97316` | Naranja acento |
+| `accent-light` | `#FFF7ED` | Naranja claro |
+| `base` | `#FFFFFF` | Blanco |
+| `background-light` | `#F5F7FA` | Fondo claro |
+| `contrast` | `#101828` | Texto principal |
+| `secondary` | `#344054` | Texto secundario |
+| `muted` | `#667085` | Texto suave |
+| `secondary-light` | `#F5F7FA` | Fondo secundario claro |
+| `tertiary` | `#F97315` | Naranja terciario |
 
-### Spacing
-- 10 niveles de espaciado: desde `10` (0.25rem) hasta `100` (5rem)
-- Gap global entre bloques: 0 (las secciones apilan sin separación)
+Tipografías locales en `assets/fonts/`: Plus Jakarta Sans para títulos, Inter e Inter Tight para texto. Layout con `contentSize` de 1280px y `wideSize` de 1440px.
 
-### Layout
-- `contentSize`: 1280px
-- `wideSize`: 1440px
+## Pendientes
 
-## Uso
-
-1. Instala y activa el tema.
-2. Ve a **Apariencia > Editor** para personalizar el sitio.
-3. Crea una página y asígnale la plantilla **Home**.
-4. Usa el editor de bloques para insertar los patrones del tema.
-5. Sube el logo del sitio en **Apariencia > Editor > Estilos > Identidad del sitio**.
-
-## Patrones disponibles
-
-Los patrones se encuentran en el insertador de bloques bajo las categorías:
-- **WP Granada: Hero** - Sección hero principal
-- **WP Granada: Eventos** - Próximo evento y eventos anteriores
-- **WP Granada: Estadísticas** - Contadores de la comunidad
-- **WP Granada: Canales** - Canales de comunicación
-- **WP Granada: Call to Action** - Ser ponente
-
-## Decisiones técnicas
-
-- **theme.json v2**: Compatibilidad con WordPress 6.5+.
-- **Fuentes locales**: Plus Jakarta Sans e Inter descargadas y servidas localmente (sin dependencias externas).
-- **Variable fonts**: Un solo archivo woff2 por fuente cubre todos los pesos necesarios.
-- **blockGap: 0**: Las secciones full-width apilan sin separación vertical; cada patrón define su propio spacing interno.
-- **CSS mínimo**: Solo se usa `style.css` para bordes de tarjetas y hover effects que no se pueden declarar en theme.json.
-- **Icon Block**: Los iconos del patrón de canales usan el bloque `outermost/icon-block` (SVG inline). Si el plugin no está instalado, los iconos se pueden reemplazar por imágenes.
-- **Social Links nativo**: El footer usa el bloque `wp:social-links` de WordPress core.
+- Logos e imágenes: `assets/images/` todavía contiene los archivos de WordPress Granada (logos, fotos de comunidad, imágenes de meetups). Hay que reemplazarlos por los de WordPress CDMX conservando los nombres.
+- Enlaces: completar `inc/community-links.php` y los `#` de las plantillas HTML.
+- Eventos: el tema heredó plantillas para el plugin `community-meetings` (`metgs_meeting`). WordPress.org planea migrar los meetups de Meetup.com a GatherPress, así que la sección de eventos se rehará sobre GatherPress cuando el plan esté definido.
+- `style.css`: contiene muchas capas de ajustes del sitio original. Conviene depurarlo y mover lo posible a `theme.json`. Además referencia seis imágenes que ya no existían en el repo original (`meetup-*.png`, `blog-*.png`); esas reglas se pueden eliminar.
+- Textos: revisar redacción de los patrones para la comunidad de la CDMX.
