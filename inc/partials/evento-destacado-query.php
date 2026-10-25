@@ -27,7 +27,7 @@ $wpcdmx_query_id = isset( $wpcdmx_query_id ) ? (int) $wpcdmx_query_id : 11;
 <!-- wp:group {"className":"wpcdmx-evento-destacado__contenido","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group wpcdmx-evento-destacado__contenido" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
 <!-- wp:post-title {"level":3,"isLink":true,"fontSize":"xx-large","style":{"typography":{"fontWeight":"700"},"elements":{"link":{"color":{"text":"var:preset|color|grafito"}}}}} /-->
-<!-- wp:gatherpress/event-date {"showTimezone":"no","style":{"typography":{"fontWeight":"500"}}} /-->
+<!-- wp:gatherpress/event-date {"style":{"typography":{"fontWeight":"500"}}} /-->
 <!-- wp:gatherpress/venue -->
 <!-- wp:post-title {"level":4,"fontSize":"medium","style":{"typography":{"fontWeight":"400"}},"textColor":"tinta-suave"} /-->
 <!-- /wp:gatherpress/venue -->
