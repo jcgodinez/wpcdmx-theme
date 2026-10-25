@@ -6,9 +6,9 @@ Es un fork de [wpgranada26](https://github.com/WPGranada/wpgranada26), el tema d
 
 ## Requisitos
 
-- WordPress 6.5+
-- PHP 7.4+
-- Plugin recomendado: [Icon Block](https://wordpress.org/plugins/icon-block/) para los iconos del patrón Canales
+- WordPress 6.6 o superior (GatherPress pide 7.0)
+- PHP 7.4 o superior (GatherPress pide 8.1)
+- Plugin recomendado: GatherPress, para los eventos
 
 ## Instalación
 
@@ -16,45 +16,21 @@ Es un fork de [wpgranada26](https://github.com/WPGranada/wpgranada26), el tema d
 2. Descomprime y renombra la carpeta a `wpcdmx-theme`. El nombre de la carpeta debe coincidir con el text domain.
 3. Vuelve a comprimir y súbelo en Apariencia > Temas > Añadir nuevo > Subir tema.
 
+## Eventos
+
+El tema usa [GatherPress](https://wordpress.org/plugins/gatherpress/) para los eventos. Instálalo y crea cada meetup como evento: la portada muestra el próximo y los tres últimos, y la página de eventos lista todos.
+
+Mientras GatherPress no esté activo o no tenga eventos, esas secciones muestran el historial reciente del grupo en Meetup.com, que se edita en `inc/events.php`.
+
 ## Enlaces de la comunidad
 
-Todas las URLs externas que imprime el tema desde PHP están en `inc/community-links.php`. Los valores `#` son marcadores pendientes. Las plantillas y partes en HTML (header, single, 404, etc.) no pueden ejecutar PHP, así que sus botones también usan `#` hasta definir la URL final.
+Todas las URLs de la comunidad y las redes sociales están en `inc/community-links.php`.
 
-También se pueden cambiar desde un plugin o tema hijo:
+## Despliegue
 
-```php
-add_filter( 'wpcdmx_community_links', function ( $links ) {
-	$links['meetup'] = 'https://www.meetup.com/...';
-	return $links;
-} );
-```
-
-## Sistema de diseño
-
-Todo vive en `theme.json`.
-
-| Token | Hex | Nombre |
-|-------|-----|--------|
-| `primary` | `#3858E9` | Azul WordPress |
-| `primary-dark` | `#213FD4` | Azul oscuro |
-| `primary-light` | `#EFF2FF` | Azul muy claro |
-| `primary-muted` | `#C7D1FF` | Azul suave |
-| `accent` | `#F97316` | Naranja acento |
-| `accent-light` | `#FFF7ED` | Naranja claro |
-| `base` | `#FFFFFF` | Blanco |
-| `background-light` | `#F5F7FA` | Fondo claro |
-| `contrast` | `#101828` | Texto principal |
-| `secondary` | `#344054` | Texto secundario |
-| `muted` | `#667085` | Texto suave |
-| `secondary-light` | `#F5F7FA` | Fondo secundario claro |
-| `tertiary` | `#F97315` | Naranja terciario |
-
-Tipografías locales en `assets/fonts/`: Plus Jakarta Sans para títulos, Inter e Inter Tight para texto. Layout con `contentSize` de 1280px y `wideSize` de 1440px.
+El sitio vive en WordPress.com (plan Business) y se despliega con GitHub Deployments. El archivo `.deployignore` evita copiar al servidor los archivos de desarrollo.
 
 ## Pendientes
 
-- Logos e imágenes: `assets/images/` todavía contiene los archivos de WordPress Granada (logos, fotos de comunidad, imágenes de meetups). Hay que reemplazarlos por los de WordPress CDMX conservando los nombres.
-- Enlaces: completar `inc/community-links.php` y los `#` de las plantillas HTML.
-- Eventos: el tema heredó plantillas para el plugin `community-meetings` (`metgs_meeting`). WordPress.org planea migrar los meetups de Meetup.com a GatherPress, así que la sección de eventos se rehará sobre GatherPress cuando el plan esté definido.
-- `style.css`: contiene muchas capas de ajustes del sitio original. Conviene depurarlo y mover lo posible a `theme.json`. Además referencia seis imágenes que ya no existían en el repo original (`meetup-*.png`, `blog-*.png`); esas reglas se pueden eliminar.
-- Textos: revisar redacción de los patrones para la comunidad de la CDMX.
+- Páginas de patrocinadores, sobre nosotros, ser ponente y código de conducta: crear las páginas en WordPress.
+- Logos: el lema "¡Sigamos aprendiendo juntos!" de los SVG originales es texto vivo; pedir al diseñador la versión en trazos.

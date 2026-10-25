@@ -8,55 +8,11 @@
 defined( 'ABSPATH' ) || exit;
 
 require_once get_template_directory() . '/inc/community-links.php';
-
-add_action( 'init', 'wpcdmx_register_pattern_categories', 1 );
-/**
- * Register custom pattern categories and block styles.
- *
- * @return void
- */
-function wpcdmx_register_pattern_categories() {
-	register_block_pattern_category( 'wpcdmx', array( 'label' => __( 'WordPress CDMX', 'wpcdmx-theme' ) ) );
-
-	register_block_style(
-		'core/paragraph',
-		array(
-			'name'  => 'textos-secundarios',
-			'label' => __( 'Textos secundarios', 'wpcdmx-theme' ),
-		)
-	);
-}
-
-add_filter( 'query_loop_block_query_vars', 'wpcdmx_upcoming_meetings_query', 10, 2 );
-/**
- * Filter Query Loop block vars for meetings CPT to show only upcoming events.
- *
- * @param array    $query_vars Current query vars.
- * @param WP_Block $block      Block instance.
- * @return array
- */
-function wpcdmx_upcoming_meetings_query( $query_vars, $block ) {
-	if ( ! isset( $query_vars['post_type'] ) || 'meetings' !== $query_vars['post_type'] ) {
-		return $query_vars;
-	}
-
-	$query_vars['post_status'] = array( 'publish', 'future' );
-	$query_vars['date_query']  = array(
-		array(
-			'after'     => gmdate( 'Y-m-d H:i:s' ),
-			'inclusive' => true,
-			'column'    => 'post_date',
-		),
-	);
-	$query_vars['orderby'] = 'date';
-	$query_vars['order']   = 'ASC';
-
-	return $query_vars;
-}
+require_once get_template_directory() . '/inc/events.php';
 
 add_action( 'after_setup_theme', 'wpcdmx_setup' );
 /**
- * Theme setup: declare block theme support and register nav menus.
+ * Theme setup.
  *
  * @return void
  */
@@ -64,518 +20,53 @@ function wpcdmx_setup() {
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'style.css' );
-
-	register_nav_menus(
-		array(
-			'menu-principal'  => __( 'Menú Principal', 'wpcdmx-theme' ),
-			'footer-eventos'  => __( 'Footer - Eventos', 'wpcdmx-theme' ),
-			'footer-comunidad' => __( 'Footer - Comunidad', 'wpcdmx-theme' ),
-		)
-	);
+	load_theme_textdomain( 'wpcdmx-theme', get_template_directory() . '/languages' );
 }
 
-add_filter( 'get_custom_logo', 'wpcdmx_custom_logo' );
+add_action( 'init', 'wpcdmx_register_pattern_categories', 9 );
 /**
- * Override site logo with theme SVG — avoids needing a media-library attachment.
- *
- * @return string
- */
-function wpcdmx_custom_logo() {
-	return sprintf(
-		'<a href="%s" class="custom-logo-link" rel="home"><img src="%s/assets/images/logo-wpcdmx.svg" class="custom-logo" alt="%s" width="180" height="auto" /></a>',
-		esc_url( home_url( '/' ) ),
-		esc_url( get_template_directory_uri() ),
-		esc_attr( get_bloginfo( 'name' ) )
-	);
-}
-
-add_shortcode( 'wpcdmx_nav', 'wpcdmx_nav_shortcode' );
-/**
- * Render the classic menu assigned to the menu-principal location.
- *
- * @return string
- */
-function wpcdmx_nav_shortcode() {
-	return wp_nav_menu(
-		array(
-			'theme_location' => 'menu-principal',
-			'echo'           => false,
-			'container'      => false,
-			'menu_class'     => 'wpcdmx-nav-menu',
-			'fallback_cb'    => false,
-		)
-	);
-}
-
-add_shortcode( 'wpcdmx_footer_eventos', 'wpcdmx_footer_eventos_shortcode' );
-function wpcdmx_footer_eventos_shortcode() {
-	$items = array(
-		array(
-			'label' => __( 'Próximos eventos', 'wpcdmx-theme' ),
-			'url'   => wpcdmx_link( 'events' ),
-		),
-		array(
-			'label' => __( 'Eventos pasados', 'wpcdmx-theme' ),
-			'url'   => wpcdmx_link( 'events_past' ),
-		),
-		array(
-			'label' => __( 'Calendario', 'wpcdmx-theme' ),
-			'url'   => wpcdmx_link( 'events_calendar' ),
-		),
-	);
-
-	return wpcdmx_footer_nav_markup( __( 'Eventos del footer', 'wpcdmx-theme' ), $items );
-}
-
-add_shortcode( 'wpcdmx_footer_comunidad', 'wpcdmx_footer_comunidad_shortcode' );
-function wpcdmx_footer_comunidad_shortcode() {
-	$items = array(
-		array(
-			'label' => __( 'Sobre nosotros', 'wpcdmx-theme' ),
-			'url'   => home_url( '/sobre-nosotros/' ),
-		),
-		array(
-			'label' => __( 'Ser ponente', 'wpcdmx-theme' ),
-			'url'   => wpcdmx_link( 'speaker' ),
-		),
-		array(
-			'label' => __( 'Patrocinadores', 'wpcdmx-theme' ),
-			'url'   => wpcdmx_link( 'sponsors' ),
-		),
-	);
-
-	return wpcdmx_footer_nav_markup( __( 'Comunidad del footer', 'wpcdmx-theme' ), $items );
-}
-
-/**
- * Render a semantic footer navigation list.
- *
- * @param string $aria_label Accessible label for the navigation landmark.
- * @param array  $items      Label and URL pairs.
- * @return string
- */
-function wpcdmx_footer_nav_markup( $aria_label, $items ) {
-	$html  = '<nav aria-label="' . esc_attr( $aria_label ) . '" class="wpcdmx-footer-nav">';
-	$html .= '<ul class="footer-nav-menu">';
-
-	foreach ( $items as $item ) {
-		$html .= '<li><a href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['label'] ) . '</a></li>';
-	}
-
-	$html .= '</ul></nav>';
-
-	return $html;
-}
-
-add_shortcode( 'wpcdmx_footer_logo', 'wpcdmx_footer_logo_shortcode' );
-/**
- * Render the footer logo from the theme directory, so the path survives a theme folder rename.
- *
- * @return string
- */
-function wpcdmx_footer_logo_shortcode() {
-	return sprintf(
-		'<figure class="wp-block-image wpcdmx-footer__logo"><a href="%s"><img src="%s/assets/images/logo-footer.png" alt="%s" width="188" height="46" /></a></figure>',
-		esc_url( home_url( '/' ) ),
-		esc_url( get_template_directory_uri() ),
-		esc_attr( get_bloginfo( 'name' ) )
-	);
-}
-
-add_shortcode( 'wpcdmx_footer_social', 'wpcdmx_footer_social_shortcode' );
-/**
- * Render the footer social links list.
- *
- * @return string
- */
-function wpcdmx_footer_social_shortcode() {
-	$social_links = array(
-		array(
-			'label' => 'LinkedIn',
-			'url'   => wpcdmx_link( 'linkedin' ),
-			'icon'  => 'linkedin.svg',
-		),
-		array(
-			'label' => 'Instagram',
-			'url'   => wpcdmx_link( 'instagram' ),
-			'icon'  => 'instagram.svg',
-		),
-		array(
-			'label' => 'YouTube',
-			'url'   => wpcdmx_link( 'youtube' ),
-			'icon'  => 'youtube.svg',
-		),
-		array(
-			'label' => 'TikTok',
-			'url'   => wpcdmx_link( 'tiktok' ),
-			'icon'  => 'tiktok.svg',
-		),
-	);
-
-	$base_url = trailingslashit( get_template_directory_uri() ) . 'assets/images/';
-	$html     = '<ul class="wpcdmx-footer__social-links" aria-label="' . esc_attr__( 'Redes sociales de WordPress CDMX', 'wpcdmx-theme' ) . '">';
-
-	foreach ( $social_links as $social_link ) {
-		$html .= '<li><a href="' . esc_url( $social_link['url'] ) . '" target="_blank" rel="noopener noreferrer" aria-label="' . esc_attr( $social_link['label'] ) . '">';
-		$html .= wpcdmx_footer_social_icon_markup( $social_link, $base_url ) . '</a></li>';
-	}
-
-	$html .= '</ul>';
-
-	return $html;
-}
-
-/**
- * Render a visible white icon for social services whose supplied SVG has a solid background.
- *
- * @param array  $social_link Social link data.
- * @param string $base_url   Theme social icon directory URL.
- * @return string
- */
-function wpcdmx_footer_social_icon_markup( $social_link, $base_url ) {
-	if ( 'Instagram' === $social_link['label'] ) {
-		return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#fff" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="#fff"/></svg>';
-	}
-
-	if ( 'YouTube' === $social_link['label'] ) {
-		return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="5.5" width="18" height="13" rx="4" stroke="#fff" stroke-width="2"/><path d="M10 8.8v6.4l5.5-3.2L10 8.8Z" fill="#fff"/></svg>';
-	}
-
-	return '<img src="' . esc_url( $base_url . $social_link['icon'] ) . '" alt="" />';
-}
-
-add_shortcode( 'wpcdmx_reading_time', 'wpcdmx_reading_time_shortcode' );
-/**
- * Render an estimated reading time for the current post.
- *
- * @return string
- */
-function wpcdmx_reading_time_shortcode() {
-	$post_content = get_post_field( 'post_content', get_the_ID() );
-	$plain_text   = wp_strip_all_tags( strip_shortcodes( (string) $post_content ) );
-	$word_count   = preg_match_all( '/[\p{L}\p{N}]+/u', $plain_text );
-	$minutes      = max( 1, (int) ceil( (int) $word_count / 200 ) );
-
-	return '<span class="wpcdmx-single-reading-time">' . esc_html( sprintf( __( '%d MIN DE LECTURA', 'wpcdmx-theme' ), $minutes ) ) . '</span>';
-}
-
-add_shortcode( 'wpcdmx_post_share', 'wpcdmx_post_share_shortcode' );
-/**
- * Render dynamic links for sharing the current post.
- *
- * @return string
- */
-function wpcdmx_post_share_shortcode() {
-	$post_url   = get_permalink( get_the_ID() );
-	$linkedin_url = add_query_arg( 'url', $post_url, 'https://www.linkedin.com/sharing/share-offsite/' );
-
-	return '<div class="wpcdmx-single-share"><span>' . esc_html__( 'Compartir', 'wpcdmx-theme' ) . '</span><a href="' . esc_url( $linkedin_url ) . '" target="_blank" rel="noopener noreferrer" aria-label="' . esc_attr__( 'Compartir en LinkedIn', 'wpcdmx-theme' ) . '">in</a></div>';
-}
-
-add_shortcode( 'wpcdmx_post_toc', 'wpcdmx_post_toc_shortcode' );
-/**
- * Render the article table of contents from H2 headings collected at render time.
- *
- * @return string
- */
-function wpcdmx_post_toc_shortcode() {
-	$items = $GLOBALS['wpcdmx_single_toc_items'] ?? array();
-
-	if ( empty( $items ) ) {
-		return '';
-	}
-
-	$output = '<nav class="wpcdmx-single-toc" aria-label="' . esc_attr__( 'Índice del artículo', 'wpcdmx-theme' ) . '"><p>' . esc_html__( 'EN ESTE ARTÍCULO', 'wpcdmx-theme' ) . '</p><ol>';
-	foreach ( $items as $index => $item ) {
-		$output .= '<li><a href="#' . esc_attr( $item['id'] ) . '"><span>' . esc_html( sprintf( '%02d', $index + 1 ) ) . '</span>' . esc_html( $item['title'] ) . '</a></li>';
-	}
-	$output .= '</ol></nav>';
-
-	return $output;
-}
-
-add_filter( 'the_content', 'wpcdmx_add_post_toc_heading_ids', 20 );
-/**
- * Collect every rendered H2 from the post content and assign matching unique IDs.
- *
- * @param string $content Rendered post content.
- * @return string
- */
-function wpcdmx_add_post_toc_heading_ids( $content ) {
-	if ( ! is_singular( 'post' ) || get_queried_object_id() !== get_the_ID() ) {
-		return $content;
-	}
-
-	$items    = array();
-	$used_ids = array();
-
-	$rendered_content = preg_replace_callback(
-		'/<h2\b([^>]*)>(.*?)<\/h2>/is',
-		function ( $matches ) use ( &$items, &$used_ids ) {
-			$attributes = $matches[1];
-			$title      = trim( wp_strip_all_tags( $matches[2] ) );
-			if ( '' === $title ) {
-				return $matches[0];
-			}
-
-			$existing_id = '';
-			if ( preg_match( '/\bid\s*=\s*(["\'])(.*?)\1/i', $attributes, $id_match ) ) {
-				$existing_id = sanitize_title( $id_match[2] );
-			}
-			$slug = $existing_id ? $existing_id : sanitize_title( $title );
-			$slug = '' !== $slug ? $slug : 'seccion';
-			$id   = $slug;
-			$suffix = 2;
-			while ( in_array( $id, $used_ids, true ) ) {
-				$id = $slug . '-' . $suffix++;
-			}
-			$used_ids[] = $id;
-			$items[]    = array(
-				'id'    => $id,
-				'title' => $title,
-			);
-
-			if ( preg_match( '/\bid\s*=\s*(["\']).*?\1/i', $attributes ) ) {
-				$attributes = preg_replace( '/\bid\s*=\s*(["\']).*?\1/i', 'id="' . esc_attr( $id ) . '"', $attributes, 1 );
-			} else {
-				$attributes .= ' id="' . esc_attr( $id ) . '"';
-			}
-
-			return '<h2' . $attributes . '>' . $matches[2] . '</h2>';
-		},
-		$content
-	);
-	$GLOBALS['wpcdmx_single_toc_items'] = $items;
-
-	return $rendered_content;
-}
-
-add_filter( 'query_loop_block_query_vars', 'wpcdmx_exclude_current_related_post', 10, 2 );
-/**
- * Exclude the current post from the related posts query.
- *
- * @param array    $query_vars Query vars.
- * @param WP_Block $block      Query block.
- * @return array
- */
-function wpcdmx_exclude_current_related_post( $query_vars, $block ) {
-	$query_id = $block->context['queryId'] ?? ( $block->parsed_block['attrs']['queryId'] ?? 0 );
-	if ( is_singular( 'post' ) && 2 === (int) $query_id ) {
-		$query_vars['post__not_in'] = array_values( array_unique( array_merge( $query_vars['post__not_in'] ?? array(), array( get_queried_object_id() ) ) ) );
-		$query_vars['post_status']  = 'publish';
-	}
-
-	return $query_vars;
-}
-
-/**
- * Check whether another published post is available for the related section.
- *
- * @return bool
- */
-function wpcdmx_has_related_posts() {
-	static $has_related_posts = null;
-	if ( null !== $has_related_posts ) {
-		return $has_related_posts;
-	}
-
-	$related_posts = get_posts(
-		array(
-			'post_type'           => 'post',
-			'post_status'         => 'publish',
-			'posts_per_page'      => 1,
-			'post__not_in'        => array( get_queried_object_id() ),
-			'fields'              => 'ids',
-			'no_found_rows'       => true,
-			'ignore_sticky_posts' => true,
-			'suppress_filters'    => false,
-		)
-	);
-
-	$has_related_posts = ! empty( $related_posts );
-
-	return $has_related_posts;
-}
-
-add_filter( 'render_block_core/group', 'wpcdmx_hide_empty_related_section', 10, 2 );
-/**
- * Omit the whole related section when there are no other published posts.
- *
- * @param string $block_content Rendered group HTML.
- * @param array  $block         Parsed block data.
- * @return string
- */
-function wpcdmx_hide_empty_related_section( $block_content, $block ) {
-	$class_name = $block['attrs']['className'] ?? '';
-	if ( ! is_singular( 'post' ) || false === strpos( $class_name, 'wpcdmx-single-related' ) ) {
-		return $block_content;
-	}
-
-	return wpcdmx_has_related_posts() ? $block_content : '';
-}
-
-add_filter( 'render_block_core/separator', 'wpcdmx_hide_empty_related_separator', 10, 2 );
-/**
- * Hide the divider above related articles when that section is empty.
- *
- * @param string $block_content Rendered separator HTML.
- * @param array  $block         Parsed block data.
- * @return string
- */
-function wpcdmx_hide_empty_related_separator( $block_content, $block ) {
-	$class_name = $block['attrs']['className'] ?? '';
-	if ( is_singular( 'post' ) && false !== strpos( $class_name, 'wpcdmx-single-related-separator' ) && ! wpcdmx_has_related_posts() ) {
-		return '';
-	}
-
-	return $block_content;
-}
-
-add_action( 'wp_enqueue_scripts', 'wpcdmx_single_post_inline_script', 20 );
-/**
- * Keep the TOC item matching the heading currently in view.
+ * Register the theme's pattern categories.
  *
  * @return void
  */
-function wpcdmx_single_post_inline_script() {
-	if ( ! is_singular( 'post' ) ) {
-		return;
-	}
-
-	$script = <<<'JS'
-(() => {
-	const toc = document.querySelector('.wpcdmx-single-toc');
-	if (!toc) return;
-	const links = [...toc.querySelectorAll('a[href^="#"]')];
-	const headings = links.map((link) => document.getElementById(decodeURIComponent(link.hash.slice(1)))).filter(Boolean);
-	if (!headings.length) return;
-	const activate = (heading) => {
-		links.forEach((link) => {
-			const active = link.hash === `#${heading.id}`;
-			link.classList.toggle('wpcdmx-single-toc__active', active);
-			if (active) link.setAttribute('aria-current', 'location');
-			else link.removeAttribute('aria-current');
-		});
-	};
-	const update = () => {
-		let current = headings[0];
-		headings.forEach((heading) => {
-			if (heading.getBoundingClientRect().top <= 150) current = heading;
-		});
-		if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) current = headings[headings.length - 1];
-		activate(current);
-	};
-	window.addEventListener('scroll', update, { passive: true });
-	window.addEventListener('resize', update);
-	update();
-})();
-JS;
-
-	wp_add_inline_script( 'wpcdmx-theme-marquee', $script, 'after' );
-}
-
-add_filter( 'template_include', 'wpcdmx_meeting_archive_template', 99 );
-/**
- * Force FSE block template for metgs_meeting archive, bypassing the plugin's
- * classic PHP template override which hijacks archive_template filter.
- *
- * @param string $template Current template path.
- * @return string
- */
-function wpcdmx_meeting_archive_template( $template ) {
-	if ( ! is_post_type_archive( 'metgs_meeting' ) ) {
-		return $template;
-	}
-	$block_template = get_block_template( get_stylesheet() . '//archive-metgs_meeting', 'wp_template' );
-	if ( $block_template && $block_template->content ) {
-		global $_wp_current_template_content, $_wp_current_template_id;
-		$_wp_current_template_content = $block_template->content;
-		$_wp_current_template_id      = $block_template->id;
-		return ABSPATH . WPINC . '/template-canvas.php';
-	}
-	return $template;
+function wpcdmx_register_pattern_categories() {
+	register_block_pattern_category(
+		'wpcdmx',
+		array( 'label' => __( 'WordPress CDMX', 'wpcdmx-theme' ) )
+	);
+	register_block_pattern_category(
+		'wpcdmx-eventos',
+		array( 'label' => __( 'WordPress CDMX: eventos', 'wpcdmx-theme' ) )
+	);
 }
 
 add_action( 'wp_enqueue_scripts', 'wpcdmx_enqueue_styles' );
 /**
- * Enqueue theme stylesheet and scripts.
+ * Enqueue the theme stylesheet.
  *
  * @return void
  */
 function wpcdmx_enqueue_styles() {
 	wp_enqueue_style(
-		'wpcdmx-theme-style',
+		'wpcdmx-theme',
 		get_stylesheet_uri(),
 		array(),
 		wp_get_theme()->get( 'Version' )
 	);
+}
 
-	wp_enqueue_script(
-		'wpcdmx-theme-marquee',
-		get_template_directory_uri() . '/assets/js/marquee.js',
-		array(),
-		wp_get_theme()->get( 'Version' ),
-		true
+add_action( 'wp_head', 'wpcdmx_favicon_fallback', 5 );
+/**
+ * Use the CDMX icon as favicon until a Site Icon is set in the Site Editor.
+ *
+ * @return void
+ */
+function wpcdmx_favicon_fallback() {
+	if ( has_site_icon() ) {
+		return;
+	}
+	printf(
+		'<link rel="icon" href="%s" type="image/svg+xml">' . "\n",
+		esc_url( get_theme_file_uri( 'assets/images/icono-wpcdmx.svg' ) )
 	);
-
-	wp_enqueue_script(
-		'wpcdmx-theme-hamburger',
-		get_template_directory_uri() . '/assets/js/hamburger.js',
-		array(),
-		wp_get_theme()->get( 'Version' ),
-		true
-	);
-}
-
-add_action( 'wp', 'wpcdmx_remove_meeting_content_injection' );
-function wpcdmx_remove_meeting_content_injection() {
-	if ( is_singular( 'metgs_meeting' ) ) {
-		remove_all_filters( 'the_content' );
-		add_filter( 'the_content', 'wpautop' );
-	}
-}
-
-add_filter( 'query_loop_block_query_vars', 'wpcdmx_sidebar_exclude_current', 10, 3 );
-function wpcdmx_sidebar_exclude_current( $query, $block, $page ) {
-	if ( isset( $block->context['queryId'] ) && 5 === (int) $block->context['queryId'] && is_singular( 'metgs_meeting' ) ) {
-		$query['post__not_in'] = array_merge( $query['post__not_in'] ?? array(), array( get_the_ID() ) );
-	}
-	return $query;
-}
-
-add_action( 'wp_footer', 'wpcdmx_mobile_overlay' );
-function wpcdmx_mobile_overlay() {
-	?>
-	<div id="wpcdmx-mobile-overlay" class="wpcdmx-mobile-overlay" aria-hidden="true">
-		<button class="wpcdmx-mobile-overlay__close" aria-label="<?php esc_attr_e( 'Cerrar menú', 'wpcdmx-theme' ); ?>">
-			<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-				<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-			</svg>
-		</button>
-		<img class="wpcdmx-mobile-overlay__logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-wpcdmx.svg" alt="WordPress CDMX" width="160">
-		<?php
-		wp_nav_menu( array(
-			'theme_location' => 'menu-principal',
-			'menu_class'     => 'wpcdmx-mobile-overlay__menu',
-			'container'      => false,
-			'fallback_cb'    => false,
-		) );
-		?>
-		<a class="wpcdmx-mobile-overlay__cta wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>" target="_blank" rel="noreferrer noopener">
-			<?php esc_html_e( 'Únete al Meetup', 'wpcdmx-theme' ); ?>
-		</a>
-	</div>
-	<?php
-}
-
-add_filter( 'upgrader_source_selection', 'wpcdmx_exclude_git_from_upgrade', 10, 4 );
-function wpcdmx_exclude_git_from_upgrade( $source, $remote_source, $upgrader, $hook_extra ) {
-	$git_dir = trailingslashit( $source ) . '.git';
-	if ( is_dir( $git_dir ) ) {
-		$upgrader->skin->feedback( 'Removing .git directory from package...' );
-		WP_Filesystem();
-		global $wp_filesystem;
-		$wp_filesystem->delete( $git_dir, true );
-	}
-	return $source;
 }

@@ -1,0 +1,9 @@
+# Archivos que GitHub Deployments de WordPress.com no debe copiar al servidor.
+.git
+.github
+.gitignore
+.distignore
+.deployignore
+AGENTS.md
+CLAUDE.md
+readme.md
