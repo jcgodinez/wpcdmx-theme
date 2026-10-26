@@ -38,6 +38,10 @@ function wpcdmx_register_pattern_categories() {
 		'wpcdmx-eventos',
 		array( 'label' => __( 'WordPress CDMX: eventos', 'wpcdmx-theme' ) )
 	);
+	register_block_pattern_category(
+		'wpcdmx-paginas',
+		array( 'label' => __( 'WordPress CDMX: páginas', 'wpcdmx-theme' ) )
+	);
 }
 
 add_action( 'wp_enqueue_scripts', 'wpcdmx_enqueue_styles' );

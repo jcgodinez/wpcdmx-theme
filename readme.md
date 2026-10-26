@@ -30,7 +30,10 @@ Todas las URLs de la comunidad y las redes sociales están en `inc/community-lin
 
 El sitio vive en WordPress.com (plan Business) y se despliega con GitHub Deployments. El archivo `.deployignore` evita copiar al servidor los archivos de desarrollo.
 
+## Páginas de la comunidad
+
+Al crear una página nueva, WordPress ofrece los patrones de la categoría "WordPress CDMX: páginas" con el contenido inicial de Sobre nosotros, Ser ponente, Patrocinadores y Código de conducta. Usa esos slugs (`sobre-nosotros`, `ser-ponente`, `patrocinadores`, `codigo-de-conducta`), porque el menú y el pie apuntan a ellos. El texto queda en la página y se edita en WordPress.
+
 ## Pendientes
 
-- Páginas de patrocinadores, sobre nosotros, ser ponente y código de conducta: crear las páginas en WordPress.
 - Logos: el lema "¡Sigamos aprendiendo juntos!" de los SVG originales es texto vivo; pedir al diseñador la versión en trazos.
