@@ -20,6 +20,8 @@ Es un fork de [wpgranada26](https://github.com/WPGranada/wpgranada26), el tema d
 
 El tema usa [GatherPress](https://wordpress.org/plugins/gatherpress/) para los eventos. Instálalo y crea cada meetup como evento: la portada muestra el próximo y los tres últimos, y la página de eventos lista todos.
 
+Crea una página vacía llamada Eventos con el slug `eventos`. El tema la muestra con la plantilla `page-eventos.html` (próximo meetup y eventos pasados), y así la dirección /eventos/ funciona aunque el archivo de GatherPress no responda. No la asignes como página de archivo en los ajustes de GatherPress.
+
 Mientras GatherPress no esté activo o no tenga eventos, esas secciones muestran el historial reciente del grupo en Meetup.com, que se edita en `inc/events.php`.
 
 ## Enlaces de la comunidad
