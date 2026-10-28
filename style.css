@@ -259,6 +259,18 @@ Tags: full-site-editing, block-patterns, custom-colors, custom-logo, translation
 	letter-spacing: 0.1em;
 }
 
+/* Logotipos de patrocinadores: misma altura, sin deformar */
+.wpcdmx-patrocinador__logo {
+	margin: 0;
+}
+.wpcdmx-patrocinador__logo img {
+	display: block;
+	height: 56px;
+	width: auto;
+	max-width: 100%;
+	object-fit: contain;
+}
+
 /* Tarjetas de redes: cuadro de color con el ícono */
 .wpcdmx-red__icono {
 	width: 56px;

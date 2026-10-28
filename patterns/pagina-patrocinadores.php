@@ -46,9 +46,7 @@
 <h2 class="wp-block-heading"><?php esc_html_e( 'Nos apoyan', 'wpcdmx-theme' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph -->
-<p><?php esc_html_e( 'WordPress.com aloja este sitio.', 'wpcdmx-theme' ); ?></p>
-<!-- /wp:paragraph -->
+<!-- wp:pattern {"slug":"wpcdmx-theme/patrocinadores-logos"} /-->
 
 <!-- wp:heading -->
 <h2 class="wp-block-heading"><?php esc_html_e( '¿Quieres patrocinar?', 'wpcdmx-theme' ); ?></h2>
@@ -63,3 +61,9 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>"><?php esc_html_e( 'Escríbenos en Meetup', 'wpcdmx-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
+
+<!-- wp:separator {"className":"is-style-wide","backgroundColor":"linea"} -->
+<hr class="wp-block-separator has-text-color has-linea-color has-alpha-channel-opacity has-linea-background-color has-background is-style-wide"/>
+<!-- /wp:separator -->
+
+<!-- wp:pattern {"slug":"wpcdmx-theme/colaboradores"} /-->
