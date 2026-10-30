@@ -19,7 +19,7 @@ $wpcdmx_colaboradores = array(
 <h2 class="wp-block-heading"><?php esc_html_e( 'Hecho por la comunidad', 'wpcdmx-theme' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Este sitio lo construyen voluntarios de WordPress CDMX. El código está abierto en GitHub y cualquiera puede tomar una tarea.', 'wpcdmx-theme' ); ?></p>
+<p><?php esc_html_e( 'Este sitio lo construyen voluntarios de WordPress CDMX. El código del tema está abierto en GitHub.', 'wpcdmx-theme' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"grid","minimumColumnWidth":"220px"}} -->
 <div class="wp-block-group">
@@ -39,7 +39,7 @@ $wpcdmx_colaboradores = array(
 <!-- /wp:group -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'repo' ) ); ?>"><?php esc_html_e( 'Colabora en GitHub', 'wpcdmx-theme' ); ?></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'repo' ) ); ?>"><?php esc_html_e( 'Ver el código en GitHub', 'wpcdmx-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 </div>
