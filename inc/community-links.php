@@ -26,6 +26,7 @@ function wpcdmx_community_links() {
 		'sponsors'  => home_url( '/patrocinadores/' ),
 		'conduct'   => home_url( '/codigo-de-conducta/' ),
 		'blog'      => home_url( '/blog/' ),
+		'gallery'   => home_url( '/galeria/' ),
 		'repo'      => 'https://github.com/jcgodinez/wpcdmx-theme',
 	);
 

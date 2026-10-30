@@ -54,5 +54,9 @@
 <!-- /wp:query-no-results -->
 </div>
 <!-- /wp:query -->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontWeight":"500"}}} -->
+<p class="has-text-align-center" style="font-weight:500"><a href="<?php echo esc_url( wpcdmx_link( 'gallery' ) ); ?>"><?php esc_html_e( 'Ver fotos de meetups anteriores', 'wpcdmx-theme' ); ?></a></p>
+<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

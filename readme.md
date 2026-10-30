@@ -36,6 +36,10 @@ El sitio vive en WordPress.com (plan Business) y se despliega con GitHub Deploym
 
 Al crear una página nueva, WordPress ofrece los patrones de la categoría "WordPress CDMX: páginas" con el contenido inicial de Sobre nosotros, Ser ponente, Patrocinadores y Código de conducta. Usa esos slugs (`sobre-nosotros`, `ser-ponente`, `patrocinadores`, `codigo-de-conducta`), porque el menú y el pie apuntan a ellos. El texto queda en la página y se edita en WordPress.
 
+## Galería
+
+La página Galería (slug `galeria`) guarda las fotos de los meetups, ordenadas por año. Cada meetup se agrega con el patrón "Álbum de meetup": fecha, título y hasta tres fotos que se amplían al hacer clic. Las fotos van en esta página y no dentro de los eventos, porque el importador de Meetup sobrescribe el contenido de un evento cada vez que se reimporta. Sube las fotos reducidas a 1920 px de ancho.
+
 ## Pendientes
 
 - Logos: el lema "¡Sigamos aprendiendo juntos!" de los SVG originales es texto vivo; pedir al diseñador la versión en trazos.

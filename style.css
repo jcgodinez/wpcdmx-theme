@@ -271,6 +271,11 @@ Tags: full-site-editing, block-patterns, custom-colors, custom-logo, translation
 	object-fit: contain;
 }
 
+/* Álbumes de la galería: esquinas como las tarjetas */
+.wpcdmx-album .wp-block-gallery .wp-block-image img {
+	border-radius: var(--wp--custom--radius--medio);
+}
+
 /* Tarjetas de redes: cuadro de color con el ícono */
 .wpcdmx-red__icono {
 	width: 56px;

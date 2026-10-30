@@ -65,6 +65,9 @@ $wpcdmx_logo = get_theme_file_uri( 'assets/images/logo-wpcdmx-negativo.svg' );
 <p><a href="<?php echo esc_url( wpcdmx_link( 'sponsors' ) ); ?>"><?php esc_html_e( 'Patrocinadores', 'wpcdmx-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
+<p><a href="<?php echo esc_url( wpcdmx_link( 'gallery' ) ); ?>"><?php esc_html_e( 'Galería', 'wpcdmx-theme' ); ?></a></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
 <p><a href="<?php echo esc_url( wpcdmx_link( 'conduct' ) ); ?>"><?php esc_html_e( 'Código de conducta', 'wpcdmx-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 </nav>
