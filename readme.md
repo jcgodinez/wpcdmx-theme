@@ -40,6 +40,8 @@ Al crear una página nueva, WordPress ofrece los patrones de la categoría "Word
 
 La página Galería (slug `galeria`) guarda las fotos de los meetups, ordenadas por año. Cada meetup se agrega con el patrón "Álbum de meetup": fecha, título y hasta tres fotos que se amplían al hacer clic. Las fotos van en esta página y no dentro de los eventos, porque el importador de Meetup sobrescribe el contenido de un evento cada vez que se reimporta. Sube las fotos reducidas a 1920 px de ancho.
 
+La galería y los eventos pasados empiezan en 2024. Lo anterior a la pausa por la pandemia no se migra porque casi no hay fotos ni datos completos.
+
 ## Pendientes
 
 - Logos: el lema "¡Sigamos aprendiendo juntos!" de los SVG originales es texto vivo; pedir al diseñador la versión en trazos.
