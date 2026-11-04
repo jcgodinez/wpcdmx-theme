@@ -46,11 +46,19 @@ function wpcdmx_link( $key ) {
 }
 
 /**
- * Events page URL: the GatherPress archive when the plugin is active, else /eventos/.
+ * Events page URL.
+ *
+ * Prefers a published page with the slug `eventos` (rendered by page-eventos.html),
+ * then the GatherPress archive, then /eventos/.
  *
  * @return string
  */
 function wpcdmx_events_url() {
+	$page = get_page_by_path( 'eventos' );
+	if ( $page instanceof WP_Post && 'publish' === $page->post_status ) {
+		return get_permalink( $page );
+	}
+
 	if ( post_type_exists( 'gatherpress_event' ) ) {
 		$archive = get_post_type_archive_link( 'gatherpress_event' );
 		if ( $archive ) {
