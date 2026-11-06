@@ -29,8 +29,11 @@ Repo: `github.com/jcgodinez/wpcdmx-theme`. Hosting: WordPress.com Business, depl
 - Event lists are core Query blocks in GatherPress's variation: `"namespace":"gatherpress-event-query"`,
   `"postType":"gatherpress_event"`, `"gatherpress_event_query":"upcoming"|"past"`, `"orderBy":"datetime"`.
 - Dates use `gatherpress/event-date` with `displayType:"start"` and a PHP date format in `startDateFormat`.
-- Without GatherPress, `wpcdmx_guard_event_queries()` empties those queries so their "no results" content shows the
-  Meetup history (`wpcdmx_meetup_history()`).
+- Without GatherPress, `wpcdmx_guard_event_queries()` empties those queries so their "no results" content shows a
+  short message linking to the Meetup group.
+- The GatherPress URL base is `evento`; the events list lives on a page with the slug `eventos` (`page-eventos.html`).
+- Footer links to Contacto and Aviso de privacidad only render when those pages are published
+  (`wpcdmx_page_is_published()`).
 
 ## Before you say "done"
 

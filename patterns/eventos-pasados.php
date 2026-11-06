@@ -41,16 +41,15 @@
 <!-- /wp:query-pagination -->
 
 <!-- wp:query-no-results -->
-<!-- wp:group {"className":"wpcdmx-colores","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group wpcdmx-colores">
-<?php echo wpcdmx_meetup_history_blocks( 'rows', 4 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped inside. ?>
-</div>
-<!-- /wp:group -->
-<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>"><?php esc_html_e( 'Ver más eventos en Meetup', 'wpcdmx-theme' ); ?></a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons -->
+<!-- wp:paragraph {"textColor":"tinta-suave"} -->
+<p class="has-tinta-suave-color has-text-color"><?php
+printf(
+	/* translators: %s: link to the Meetup group. */
+	esc_html__( 'Todavía no hay eventos pasados en el sitio. Mientras tanto, puedes verlos en %s.', 'wpcdmx-theme' ),
+	'<a href="' . esc_url( wpcdmx_link( 'meetup' ) ) . '">' . esc_html__( 'nuestro grupo de Meetup', 'wpcdmx-theme' ) . '</a>'
+);
+?></p>
+<!-- /wp:paragraph -->
 <!-- /wp:query-no-results -->
 </div>
 <!-- /wp:query -->

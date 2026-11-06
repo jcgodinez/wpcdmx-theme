@@ -22,7 +22,7 @@ El tema usa [GatherPress](https://wordpress.org/plugins/gatherpress/) para los e
 
 La base de URL de GatherPress es `evento` (cada evento queda en /evento/nombre/). Crea una página vacía llamada Eventos con el slug `eventos`; todos los enlaces del tema a Eventos apuntan a ella. El tema la muestra con la plantilla `page-eventos.html` (próximo meetup y eventos pasados), y así la dirección /eventos/ funciona aunque el archivo de GatherPress no responda. No la asignes como página de archivo en los ajustes de GatherPress.
 
-Mientras GatherPress no esté activo o no tenga eventos, esas secciones muestran el historial reciente del grupo en Meetup.com, que se edita en `inc/events.php`.
+Si GatherPress no está activo o no tiene eventos, esas secciones muestran un mensaje con enlace al grupo de Meetup.
 
 ## Enlaces de la comunidad
 

@@ -27,6 +27,8 @@ function wpcdmx_community_links() {
 		'conduct'   => home_url( '/codigo-de-conducta/' ),
 		'blog'      => home_url( '/blog/' ),
 		'gallery'   => home_url( '/galeria/' ),
+		'contact'   => home_url( '/contacto/' ),
+		'privacy'   => home_url( '/aviso-de-privacidad/' ),
 		'repo'      => 'https://github.com/jcgodinez/wpcdmx-theme',
 	);
 
@@ -143,4 +145,18 @@ function wpcdmx_social_links_markup() {
 		);
 	}
 	return $html . '</ul>';
+}
+
+/**
+ * Whether a page with the given slug is published.
+ *
+ * Lets the footer hide links to pages that do not exist yet.
+ *
+ * @param string $slug Page slug.
+ * @return bool
+ */
+function wpcdmx_page_is_published( $slug ) {
+	$page = get_page_by_path( $slug );
+
+	return $page instanceof WP_Post && 'publish' === $page->post_status;
 }

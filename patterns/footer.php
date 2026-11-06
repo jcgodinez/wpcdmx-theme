@@ -70,6 +70,16 @@ $wpcdmx_logo = get_theme_file_uri( 'assets/images/logo-wpcdmx-negativo.svg' );
 <!-- wp:paragraph -->
 <p><a href="<?php echo esc_url( wpcdmx_link( 'conduct' ) ); ?>"><?php esc_html_e( 'Código de conducta', 'wpcdmx-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
+<?php if ( wpcdmx_page_is_published( 'contacto' ) ) : ?>
+<!-- wp:paragraph -->
+<p><a href="<?php echo esc_url( wpcdmx_link( 'contact' ) ); ?>"><?php esc_html_e( 'Contacto', 'wpcdmx-theme' ); ?></a></p>
+<!-- /wp:paragraph -->
+<?php endif; ?>
+<?php if ( wpcdmx_page_is_published( 'aviso-de-privacidad' ) ) : ?>
+<!-- wp:paragraph -->
+<p><a href="<?php echo esc_url( wpcdmx_link( 'privacy' ) ); ?>"><?php esc_html_e( 'Aviso de privacidad', 'wpcdmx-theme' ); ?></a></p>
+<!-- /wp:paragraph -->
+<?php endif; ?>
 </nav>
 <!-- /wp:group -->
 </div>
