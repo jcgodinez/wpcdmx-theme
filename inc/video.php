@@ -29,7 +29,7 @@ function wpcdmx_register_video_meta() {
 		'wpcdmx_video_url',
 		array(
 			'type'              => 'string',
-			'description'       => __( 'Enlace de YouTube con la grabación del evento.', 'wpcdmx-theme' ),
+			'description'       => __( 'Enlace de YouTube con la grabación del evento: un video o una lista de reproducción.', 'wpcdmx-theme' ),
 			'single'            => true,
 			'show_in_rest'      => true,
 			'default'           => '',
@@ -53,6 +53,54 @@ function wpcdmx_youtube_id( $url ) {
 	$pattern = '~(?:youtu\.be/|youtube(?:-nocookie)?\.com/(?:watch\?(?:.*&)?v=|embed/|live/|shorts/))([A-Za-z0-9_-]{11})~';
 
 	return preg_match( $pattern, (string) $url, $m ) ? $m[1] : '';
+}
+
+/**
+ * Extract the playlist ID (the `list` parameter) from a YouTube URL.
+ *
+ * @param string $url YouTube URL.
+ * @return string Playlist ID, or ''.
+ */
+function wpcdmx_youtube_playlist_id( $url ) {
+	if ( ! preg_match( '~youtu(?:\.be|be(?:-nocookie)?\.com)/~', (string) $url ) ) {
+		return '';
+	}
+
+	return preg_match( '~[?&]list=([A-Za-z0-9_-]+)~', (string) $url, $m ) ? $m[1] : '';
+}
+
+/**
+ * Embed and watch URLs for a YouTube video or playlist link.
+ *
+ * A playlist link (youtube.com/playlist?list=...) embeds the whole list. A video
+ * link that also carries a list starts at that video inside the list.
+ *
+ * @param string $url YouTube URL.
+ * @return array{embed: string, watch: string, playlist: bool}|null Null when not YouTube.
+ */
+function wpcdmx_youtube_embed( $url ) {
+	$video = wpcdmx_youtube_id( $url );
+	$list  = wpcdmx_youtube_playlist_id( $url );
+
+	if ( '' !== $video ) {
+		$embed = 'https://www.youtube-nocookie.com/embed/' . $video;
+		$watch = 'https://www.youtube.com/watch?v=' . $video;
+		if ( '' !== $list ) {
+			$embed .= '?list=' . $list;
+			$watch .= '&list=' . $list;
+		}
+		return array( 'embed' => $embed, 'watch' => $watch, 'playlist' => '' !== $list );
+	}
+
+	if ( '' !== $list ) {
+		return array(
+			'embed'    => 'https://www.youtube-nocookie.com/embed/videoseries?list=' . $list,
+			'watch'    => 'https://www.youtube.com/playlist?list=' . $list,
+			'playlist' => true,
+		);
+	}
+
+	return null;
 }
 
 /**
@@ -121,8 +169,8 @@ function wpcdmx_video_block_post_id( $block ) {
  */
 function wpcdmx_render_video_block( $attributes, $content, $block = null ) {
 	$post_id = wpcdmx_video_block_post_id( $block );
-	$id      = wpcdmx_youtube_id( wpcdmx_event_video_url( $post_id ) );
-	if ( '' === $id ) {
+	$video   = wpcdmx_youtube_embed( wpcdmx_event_video_url( $post_id ) );
+	if ( null === $video ) {
 		return '';
 	}
 
@@ -131,11 +179,11 @@ function wpcdmx_render_video_block( $attributes, $content, $block = null ) {
 
 	return sprintf(
 		'<section class="wpcdmx-video" aria-labelledby="wpcdmx-video-titulo"><h2 id="wpcdmx-video-titulo" class="wp-block-heading">%1$s</h2><div class="wpcdmx-video__marco"><iframe src="%2$s" title="%3$s" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="wpcdmx-video__enlace"><a href="%4$s">%5$s</a></p></section>',
-		esc_html__( 'Grabación', 'wpcdmx-theme' ),
-		esc_url( 'https://www.youtube-nocookie.com/embed/' . $id ),
+		$video['playlist'] ? esc_html__( 'Grabaciones', 'wpcdmx-theme' ) : esc_html__( 'Grabación', 'wpcdmx-theme' ),
+		esc_url( $video['embed'] ),
 		esc_attr( $title ),
-		esc_url( 'https://www.youtube.com/watch?v=' . $id ),
-		esc_html__( 'Ver en YouTube', 'wpcdmx-theme' )
+		esc_url( $video['watch'] ),
+		$video['playlist'] ? esc_html__( 'Ver la lista en YouTube', 'wpcdmx-theme' ) : esc_html__( 'Ver en YouTube', 'wpcdmx-theme' )
 	);
 }
 
@@ -148,9 +196,12 @@ function wpcdmx_render_video_block( $attributes, $content, $block = null ) {
  * @return string
  */
 function wpcdmx_render_video_badge_block( $attributes, $content, $block = null ) {
-	if ( '' === wpcdmx_youtube_id( wpcdmx_event_video_url( wpcdmx_video_block_post_id( $block ) ) ) ) {
+	$video = wpcdmx_youtube_embed( wpcdmx_event_video_url( wpcdmx_video_block_post_id( $block ) ) );
+	if ( null === $video ) {
 		return '';
 	}
 
-	return '<span class="wpcdmx-etiqueta-video"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' . esc_html__( 'Video', 'wpcdmx-theme' ) . '</span>';
+	$label = $video['playlist'] ? __( 'Videos', 'wpcdmx-theme' ) : __( 'Video', 'wpcdmx-theme' );
+
+	return '<span class="wpcdmx-etiqueta-video"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' . esc_html( $label ) . '</span>';
 }

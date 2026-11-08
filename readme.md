@@ -38,7 +38,7 @@ Al crear una página nueva, WordPress ofrece los patrones de la categoría "Word
 
 ## Grabaciones
 
-Cada evento puede tener el enlace de su grabación en YouTube en el campo personalizado `wpcdmx_video_url`. El enlace se guarda fuera del contenido, así que no se pierde si el evento se vuelve a importar de Meetup. Si el campo tiene un enlace, la página del evento muestra el video (con youtube-nocookie.com) y la lista de eventos pasados marca el evento con la etiqueta "Video". Para editarlo en WordPress, activa el panel de Campos personalizados en las preferencias del editor.
+Cada evento puede tener el enlace de su grabación en YouTube en el campo personalizado `wpcdmx_video_url`. Sirve un video o una lista de reproducción (por ejemplo, para un evento con varias charlas como el WordPress Day); con una lista, la página muestra el reproductor de la lista y la etiqueta dice "Videos". El enlace se guarda fuera del contenido, así que no se pierde si el evento se vuelve a importar de Meetup. Si el campo tiene un enlace, la página del evento muestra el video (con youtube-nocookie.com) y la lista de eventos pasados marca el evento con la etiqueta "Video". Para editarlo en WordPress, activa el panel de Campos personalizados en las preferencias del editor.
 
 ## Galería
 
