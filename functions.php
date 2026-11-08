@@ -9,6 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 require_once get_template_directory() . '/inc/community-links.php';
 require_once get_template_directory() . '/inc/events.php';
+require_once get_template_directory() . '/inc/video.php';
 
 add_action( 'after_setup_theme', 'wpcdmx_setup' );
 /**

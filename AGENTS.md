@@ -32,6 +32,9 @@ Repo: `github.com/jcgodinez/wpcdmx-theme`. Hosting: WordPress.com Business, depl
 - Without GatherPress, `wpcdmx_guard_event_queries()` empties those queries so their "no results" content shows a
   short message linking to the Meetup group.
 - The GatherPress URL base is `evento`; the events list lives on a page with the slug `eventos` (`page-eventos.html`).
+- Recordings: `wpcdmx_video_url` meta on events (`inc/video.php`), rendered by the server-side blocks `wpcdmx/video`
+  (single event template) and `wpcdmx/video-etiqueta` (past events list). They read `postId` from block context;
+  do not use shortcodes in templates, since template shortcodes run after the Query Loop and only see the main post.
 - Footer links to Contacto and Aviso de privacidad only render when those pages are published
   (`wpcdmx_page_is_published()`).
 

@@ -3,7 +3,7 @@
  * Title: Eventos pasados (lista)
  * Slug: wpcdmx-theme/eventos-pasados
  * Categories: wpcdmx-eventos
- * Description: Eventos pasados de GatherPress en filas con fecha de color y paginación. Sin eventos, muestra el historial reciente de Meetup.
+ * Description: Eventos pasados de GatherPress en filas con fecha de color y paginación. Marca con "Video" los eventos que tienen grabación.
  *
  * @package wpcdmx-theme
  */
@@ -26,7 +26,10 @@
 <!-- wp:group {"className":"wpcdmx-fila-evento__contenido","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group wpcdmx-fila-evento__contenido">
 <!-- wp:post-title {"level":3,"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|grafito"}}}}} /-->
-<!-- wp:gatherpress/event-date {"displayType":"start","startDateFormat":"j \\d\\e F \\d\\e Y","showTimezone":"no","fontSize":"small","textColor":"tinta-suave"} /-->
+<!-- wp:group {"className":"wpcdmx-fila-evento__meta","style":{"spacing":{"blockGap":"12px"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"}} -->
+<div class="wp-block-group wpcdmx-fila-evento__meta"><!-- wp:gatherpress/event-date {"displayType":"start","startDateFormat":"j \\d\\e F \\d\\e Y","showTimezone":"no","fontSize":"small","textColor":"tinta-suave"} /-->
+<!-- wp:wpcdmx/video-etiqueta /--></div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 <!-- wp:read-more {"content":"<?php esc_attr_e( 'Ver el evento', 'wpcdmx-theme' ); ?>","style":{"typography":{"fontWeight":"500"}}} /-->
