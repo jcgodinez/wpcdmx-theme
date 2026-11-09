@@ -205,3 +205,64 @@ function wpcdmx_render_video_badge_block( $attributes, $content, $block = null )
 
 	return '<span class="wpcdmx-etiqueta-video"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' . esc_html( $label ) . '</span>';
 }
+
+add_action( 'add_meta_boxes_gatherpress_event', 'wpcdmx_add_video_meta_box' );
+/**
+ * Add a "Grabación (YouTube)" box to the event editor sidebar.
+ *
+ * @return void
+ */
+function wpcdmx_add_video_meta_box() {
+	add_meta_box(
+		'wpcdmx-video',
+		__( 'Grabación (YouTube)', 'wpcdmx-theme' ),
+		'wpcdmx_render_video_meta_box',
+		'gatherpress_event',
+		'side',
+		'default'
+	);
+}
+
+/**
+ * Print the recording URL field.
+ *
+ * @param WP_Post $post Event being edited.
+ * @return void
+ */
+function wpcdmx_render_video_meta_box( $post ) {
+	wp_nonce_field( 'wpcdmx_video_save', 'wpcdmx_video_nonce' );
+	printf(
+		'<p><label for="wpcdmx-video-url">%1$s</label></p><p><input type="url" id="wpcdmx-video-url" name="wpcdmx_video_url" value="%2$s" class="widefat" placeholder="https://youtu.be/..." /></p><p class="description">%3$s</p>',
+		esc_html__( 'Enlace del video o de la lista de reproducción', 'wpcdmx-theme' ),
+		esc_attr( wpcdmx_event_video_url( $post->ID ) ),
+		esc_html__( 'Pega el enlace de YouTube y guarda el evento. Déjalo vacío si no hay grabación.', 'wpcdmx-theme' )
+	);
+}
+
+add_action( 'save_post_gatherpress_event', 'wpcdmx_save_video_meta_box' );
+/**
+ * Save the recording URL from the meta box.
+ *
+ * The block editor submits meta boxes after its own REST save, so this value wins.
+ *
+ * @param int $post_id Event ID.
+ * @return void
+ */
+function wpcdmx_save_video_meta_box( $post_id ) {
+	if (
+		! isset( $_POST['wpcdmx_video_nonce'], $_POST['wpcdmx_video_url'] )
+		|| ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['wpcdmx_video_nonce'] ) ), 'wpcdmx_video_save' )
+		|| ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+		|| ! current_user_can( 'edit_post', $post_id )
+	) {
+		return;
+	}
+
+	$url = esc_url_raw( trim( wp_unslash( $_POST['wpcdmx_video_url'] ) ) );
+
+	if ( '' === $url ) {
+		delete_post_meta( $post_id, 'wpcdmx_video_url' );
+	} else {
+		update_post_meta( $post_id, 'wpcdmx_video_url', $url );
+	}
+}
