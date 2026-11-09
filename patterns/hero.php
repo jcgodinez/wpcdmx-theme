@@ -42,7 +42,7 @@
 <!-- wp:column {"verticalAlignment":"center","width":"54%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:54%">
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"wpcdmx-hero-foto"} -->
-<figure class="wp-block-image size-full wpcdmx-hero-foto"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/comunidad-wpcdmx.webp' ) ); ?>" alt="<?php esc_attr_e( 'Foto grupal de la comunidad WordPress CDMX en un meetup', 'wpcdmx-theme' ); ?>" width="1920" height="1189"/></figure>
+<figure class="wp-block-image size-full wpcdmx-hero-foto"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/comunidad-wpcdmx-960.webp' ) ); ?>" srcset="<?php echo esc_attr( get_theme_file_uri( 'assets/images/comunidad-wpcdmx-640.webp' ) . ' 640w, ' . get_theme_file_uri( 'assets/images/comunidad-wpcdmx-960.webp' ) . ' 960w, ' . get_theme_file_uri( 'assets/images/comunidad-wpcdmx-1280.webp' ) . ' 1280w, ' . get_theme_file_uri( 'assets/images/comunidad-wpcdmx.webp' ) . ' 1920w' ); ?>" sizes="(min-width: 1280px) 680px, (min-width: 782px) 54vw, calc(100vw - 64px)" fetchpriority="high" alt="<?php esc_attr_e( 'Foto grupal de la comunidad WordPress CDMX en un meetup', 'wpcdmx-theme' ); ?>" width="1920" height="1189"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->
