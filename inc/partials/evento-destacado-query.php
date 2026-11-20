@@ -46,12 +46,12 @@ $wpcdmx_query_id = isset( $wpcdmx_query_id ) ? (int) $wpcdmx_query_id : 11;
 <div class="wp-block-group"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><?php esc_html_e( 'Estamos preparando el siguiente meetup', 'wpcdmx-theme' ); ?></h3>
 <!-- /wp:heading --><!-- wp:paragraph {"textColor":"tinta-suave"} -->
-<p class="has-tinta-suave-color has-text-color"><?php esc_html_e( 'Únete al grupo en Meetup para recibir el aviso en cuanto lo publiquemos.', 'wpcdmx-theme' ); ?></p>
+<p class="has-tinta-suave-color has-text-color"><?php esc_html_e( 'Únete al grupo en events.wordpress.org para recibir el aviso en cuanto lo publiquemos.', 'wpcdmx-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>"><?php esc_html_e( 'Avísame del próximo', 'wpcdmx-theme' ); ?></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'group' ) ); ?>"><?php esc_html_e( 'Avísame del próximo', 'wpcdmx-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 </div>

@@ -47,9 +47,9 @@
 <!-- wp:paragraph {"textColor":"tinta-suave"} -->
 <p class="has-tinta-suave-color has-text-color"><?php
 printf(
-	/* translators: %s: link to the Meetup group. */
+	/* translators: %s: link to the community group on events.wordpress.org. */
 	esc_html__( 'Todavía no hay eventos pasados en el sitio. Mientras tanto, puedes verlos en %s.', 'wpcdmx-theme' ),
-	'<a href="' . esc_url( wpcdmx_link( 'meetup' ) ) . '">' . esc_html__( 'nuestro grupo de Meetup', 'wpcdmx-theme' ) . '</a>'
+	'<a href="' . esc_url( wpcdmx_link( 'group' ) ) . '">' . esc_html__( 'nuestro grupo en WordPress.org', 'wpcdmx-theme' ) . '</a>'
 );
 ?></p>
 <!-- /wp:paragraph -->

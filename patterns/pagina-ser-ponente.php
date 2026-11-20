@@ -60,7 +60,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>"><?php esc_html_e( 'Escríbenos en Meetup', 'wpcdmx-theme' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'contact' ) ); ?>"><?php esc_html_e( 'Escríbenos', 'wpcdmx-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 

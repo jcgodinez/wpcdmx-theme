@@ -55,7 +55,7 @@ $wpcdmx_actividades = array(
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'El grupo forma parte del programa de meetups de WordPress.org. Lo organizan voluntarios y no tiene fines de lucro: nadie cobra por dar una charla ni por asistir. En Meetup somos más de 2,500 miembros y llevamos más de cien eventos.', 'wpcdmx-theme' ); ?></p>
+<p><?php esc_html_e( 'El grupo forma parte del programa de meetups de WordPress.org. Lo organizan voluntarios y no tiene fines de lucro: nadie cobra por dar una charla ni por asistir. En Meetup llegamos a ser más de 2,500 miembros y llevamos más de cien eventos.', 'wpcdmx-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -78,7 +78,7 @@ printf(
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>"><?php esc_html_e( 'Únete en Meetup', 'wpcdmx-theme' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'group' ) ); ?>"><?php esc_html_e( 'Únete al grupo', 'wpcdmx-theme' ); ?></a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'speaker' ) ); ?>"><?php esc_html_e( 'Propón una charla', 'wpcdmx-theme' ); ?></a></div>

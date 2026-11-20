@@ -26,12 +26,12 @@ $wpcdmx_logo = get_theme_file_uri( 'assets/images/logo-wpcdmx.svg' );
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Sobre nosotros', 'wpcdmx-theme' ); ?>","url":"<?php echo esc_url( wpcdmx_link( 'about' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Ser ponente', 'wpcdmx-theme' ); ?>","url":"<?php echo esc_url( wpcdmx_link( 'speaker' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Blog', 'wpcdmx-theme' ); ?>","url":"<?php echo esc_url( wpcdmx_link( 'blog' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Únete en Meetup', 'wpcdmx-theme' ); ?>","url":"<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>","kind":"custom","isTopLevelLink":true,"className":"wpcdmx-nav-cta"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Únete al grupo', 'wpcdmx-theme' ); ?>","url":"<?php echo esc_url( wpcdmx_link( 'group' ) ); ?>","kind":"custom","isTopLevelLink":true,"className":"wpcdmx-nav-cta"} /-->
 <!-- /wp:navigation -->
 
 <!-- wp:buttons {"className":"wpcdmx-header__cta"} -->
 <div class="wp-block-buttons wpcdmx-header__cta"><!-- wp:button {"style":{"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"}}},"fontSize":"medium"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-medium-font-size has-custom-font-size wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>" style="padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px"><?php esc_html_e( 'Únete en Meetup', 'wpcdmx-theme' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-medium-font-size has-custom-font-size wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'group' ) ); ?>" style="padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px"><?php esc_html_e( 'Únete al grupo', 'wpcdmx-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 </div>

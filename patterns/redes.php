@@ -9,7 +9,7 @@
  */
 
 $wpcdmx_textos = array(
-	'meetup'    => array( __( 'Regístrate en cada meetup y recibe los avisos de nuevos eventos.', 'wpcdmx-theme' ), __( 'Ir a Meetup', 'wpcdmx-theme' ) ),
+	'group'     => array( __( 'Únete al grupo en events.wordpress.org y recibe un aviso de cada evento nuevo.', 'wpcdmx-theme' ), __( 'Unirme al grupo', 'wpcdmx-theme' ) ),
 	'youtube'   => array( __( 'Suscríbete al canal de la comunidad en @WPCDMX.', 'wpcdmx-theme' ), __( 'Ver el canal', 'wpcdmx-theme' ) ),
 	'instagram' => array( __( 'Síguenos en @wordpress_mx para fotos y avisos de cada evento.', 'wpcdmx-theme' ), __( 'Seguir en Instagram', 'wpcdmx-theme' ) ),
 	'facebook'  => array( __( 'Únete al grupo para preguntar, compartir y ayudar a otros.', 'wpcdmx-theme' ), __( 'Unirme al grupo', 'wpcdmx-theme' ) ),

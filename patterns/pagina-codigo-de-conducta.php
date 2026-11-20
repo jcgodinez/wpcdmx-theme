@@ -45,13 +45,13 @@ $wpcdmx_secciones = array(
 	array(
 		__( 'Cómo reportar', 'wpcdmx-theme' ),
 		array(
-			__( 'Si viviste o viste una conducta inaceptable, busca a cualquier persona del equipo organizador lo antes posible, durante o después del evento. Si pasó en línea, escríbenos por Meetup. Tratamos cada reporte con discreción y, si lo necesitas, te ayudamos a contactar a la seguridad del lugar o a las autoridades y a sentirte a salvo.', 'wpcdmx-theme' ),
+			__( 'Si viviste o viste una conducta inaceptable, busca a cualquier persona del equipo organizador lo antes posible, durante o después del evento. Si pasó en línea, escríbenos desde la página de Contacto. Tratamos cada reporte con discreción y, si lo necesitas, te ayudamos a contactar a la seguridad del lugar o a las autoridades y a sentirte a salvo.', 'wpcdmx-theme' ),
 		),
 	),
 	array(
 		__( 'Alcance', 'wpcdmx-theme' ),
 		array(
-			__( 'Este código aplica en los meetups, talleres, el WordPress Day CDMX, las reuniones sociales relacionadas y los espacios en línea de la comunidad: el grupo de Meetup, las redes sociales y las transmisiones.', 'wpcdmx-theme' ),
+			__( 'Este código aplica en los meetups, talleres, el WordPress Day CDMX, las reuniones sociales relacionadas y los espacios en línea de la comunidad: el grupo en events.wordpress.org, las redes sociales y las transmisiones.', 'wpcdmx-theme' ),
 		),
 	),
 );
@@ -75,7 +75,7 @@ $wpcdmx_secciones = array(
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>"><?php esc_html_e( 'Contacta a los organizadores', 'wpcdmx-theme' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'contact' ) ); ?>"><?php esc_html_e( 'Contacta a los organizadores', 'wpcdmx-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 

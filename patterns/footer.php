@@ -45,7 +45,7 @@ $wpcdmx_logo = get_theme_file_uri( 'assets/images/logo-wpcdmx-negativo.svg' );
 <p><a href="<?php echo esc_url( wpcdmx_link( 'events' ) ); ?>#pasados"><?php esc_html_e( 'Eventos pasados', 'wpcdmx-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p><a href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>"><?php esc_html_e( 'Grupo en Meetup', 'wpcdmx-theme' ); ?></a></p>
+<p><a href="<?php echo esc_url( wpcdmx_link( 'group' ) ); ?>"><?php esc_html_e( 'Grupo en WordPress.org', 'wpcdmx-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 </nav>
 <!-- /wp:group -->

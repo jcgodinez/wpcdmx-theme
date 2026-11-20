@@ -39,7 +39,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Agradecemos a cada patrocinador al inicio del evento, en la publicación de Meetup y en nuestras redes, y su logotipo aparece en esta página. El grupo sigue las reglas de patrocinio de los meetups de WordPress.org, así que las charlas no se venden: el contenido lo decide la comunidad.', 'wpcdmx-theme' ); ?></p>
+<p><?php esc_html_e( 'Agradecemos a cada patrocinador al inicio del evento, en la publicación del evento y en nuestras redes, y su logotipo aparece en esta página. El grupo sigue las reglas de patrocinio de los meetups de WordPress.org, así que las charlas no se venden: el contenido lo decide la comunidad.', 'wpcdmx-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
@@ -58,7 +58,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'meetup' ) ); ?>"><?php esc_html_e( 'Escríbenos en Meetup', 'wpcdmx-theme' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( wpcdmx_link( 'contact' ) ); ?>"><?php esc_html_e( 'Escríbenos', 'wpcdmx-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 

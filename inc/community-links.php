@@ -16,6 +16,7 @@ defined( 'ABSPATH' ) || exit;
  */
 function wpcdmx_community_links() {
 	$links = array(
+		'group'     => 'https://events.wordpress.org/group/wp-mexico/',
 		'meetup'    => 'https://www.meetup.com/wordpress-mexico/',
 		'youtube'   => 'https://www.youtube.com/@WPCDMX',
 		'instagram' => 'https://www.instagram.com/wordpress_mx',
@@ -81,8 +82,8 @@ function wpcdmx_events_url() {
 function wpcdmx_social_networks() {
 	return array(
 		array(
-			'key'   => 'meetup',
-			'name'  => 'Meetup',
+			'key'   => 'group',
+			'name'  => 'WordPress.org',
 			'color' => 'turquesa',
 			'ink'   => '#ffffff',
 			'icon'  => '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>',
