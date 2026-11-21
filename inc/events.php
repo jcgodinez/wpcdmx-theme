@@ -5,7 +5,7 @@
  * Event lists are core Query blocks in GatherPress's event-query variation
  * (namespace `gatherpress-event-query`). When GatherPress is not active, or has
  * no events, each query shows its "no results" content: a short message with
- * a link to the Meetup group.
+ * a link to the community group on events.wordpress.org.
  *
  * @package wpcdmx-theme
  */
@@ -44,4 +44,44 @@ function wpcdmx_guard_event_queries( $query_vars, $block ) {
 	}
 
 	return $query_vars;
+}
+
+add_action( 'template_redirect', 'wpcdmx_redirect_old_event_urls', 1 );
+/**
+ * Send old event URLs (/eventos/slug/) to the current ones (/evento/slug/).
+ *
+ * The GatherPress base changed from "eventos" to "evento" because /eventos/ is
+ * now the Events page. Links shared before the change would otherwise end in
+ * a 404. Runs only on 404s, so it never touches a page that exists.
+ *
+ * @return void
+ */
+function wpcdmx_redirect_old_event_urls() {
+	if ( ! is_404() || ! post_type_exists( 'gatherpress_event' ) ) {
+		return;
+	}
+
+	$old_base = 'eventos';
+	$type     = get_post_type_object( 'gatherpress_event' );
+	$new_base = ( $type && ! empty( $type->rewrite['slug'] ) ) ? trim( $type->rewrite['slug'], '/' ) : '';
+	if ( '' === $new_base || $old_base === $new_base ) {
+		return;
+	}
+
+	$request   = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- only matched against a pattern below.
+	$path      = (string) wp_parse_url( $request, PHP_URL_PATH );
+	$home_path = (string) wp_parse_url( home_url( '/' ), PHP_URL_PATH );
+	$path      = trim( substr( $path, strlen( rtrim( $home_path, '/' ) ) ), '/' );
+
+	if ( ! preg_match( '#^' . preg_quote( $old_base, '#' ) . '/([^/]+)$#', $path, $matches ) ) {
+		return;
+	}
+
+	$event = get_page_by_path( sanitize_title( rawurldecode( $matches[1] ) ), OBJECT, 'gatherpress_event' );
+	if ( ! $event instanceof WP_Post || 'publish' !== $event->post_status ) {
+		return;
+	}
+
+	wp_safe_redirect( get_permalink( $event ), 301, 'WordPress CDMX' );
+	exit;
 }
