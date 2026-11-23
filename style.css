@@ -4,7 +4,7 @@ Theme URI: https://github.com/jcgodinez/wpcdmx-theme
 Author: WordPress CDMX
 Author URI: https://github.com/jcgodinez/wpcdmx-theme
 Description: Tema de bloques para la comunidad WordPress CDMX. Identidad del Manual de Normas Gráficas 2026, eventos con GatherPress. Basado en wpgranada26 de WordPress Granada (https://github.com/WPGranada/wpgranada26).
-Version: 0.3.0
+Version: 0.4.0
 Requires at least: 6.6
 Tested up to: 7.2
 Requires PHP: 7.4
@@ -396,4 +396,20 @@ Tags: full-site-editing, block-patterns, custom-colors, custom-logo, translation
 .wpcdmx-camino h2 a:focus-visible {
 	text-decoration: underline;
 	text-underline-offset: 0.15em;
+}
+
+/* Página de enlaces (/links/): una columna para compartir en redes */
+.wpcdmx-links__logo img {
+	display: block;
+	height: auto;
+	width: 160px;
+}
+.wpcdmx-links__lista .wp-block-button__link {
+	padding-block: 0.9em;
+}
+.wpcdmx-links__evento .wp-block-post-title {
+	margin-block: 0;
+}
+.wpcdmx-links__evento .wp-block-read-more {
+	margin-top: var(--wp--preset--spacing--20);
 }
