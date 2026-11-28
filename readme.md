@@ -42,7 +42,9 @@ Cada evento puede tener el enlace de su grabación en YouTube en el campo person
 
 ## Galería
 
-La página Galería (slug `galeria`) guarda las fotos de los meetups, ordenadas por año. Cada meetup se agrega con el patrón "Álbum de meetup": fecha, título y hasta tres fotos que se amplían al hacer clic. Las fotos van en esta página y no dentro de los eventos, porque el importador de Meetup sobrescribe el contenido de un evento cada vez que se reimporta. Sube las fotos reducidas a 1920 px de ancho.
+La página Galería (slug `galeria`) guarda las fotos de los meetups, ordenadas por año. Cada meetup se agrega con el patrón "Álbum de meetup": fecha, título y hasta tres fotos que se amplían al hacer clic. Sube las fotos reducidas a 1920 px de ancho.
+
+Desde noviembre de 2026 los eventos ya no se importan de Meetup, así que las fotos también pueden ir dentro de cada evento: al final del contenido se inserta el patrón "Fotos del meetup" (título y galería de tres columnas que se amplía al hacer clic). Antes no se hacía porque el importador sobrescribía el contenido del evento.
 
 Los eventos se migran completos desde Meetup. La galería empieza en 2024, porque de los meetups anteriores casi no hay fotos.
 
